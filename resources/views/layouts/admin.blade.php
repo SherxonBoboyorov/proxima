@@ -47,7 +47,6 @@
                       </li>
                     {{-- end  --}}
 
-
                     {{-- start  --}}
                         <li class="nav-item">
                            <a href="{{ route('promotional.index') }}" class="nav-link">
@@ -58,10 +57,10 @@
                           </p>
                           </a>
                         </li>
-                       {{-- end  --}}
+                    {{-- end  --}}
 
                     {{-- start  --}}
-                       <li class="nav-item">
+                      <li class="nav-item">
                         <a href="{{ route('page.index') }}" class="nav-link">
                         <i class="nav-icon"></i>
                         <p>
@@ -73,8 +72,7 @@
                     {{-- end  --}}
 
 
-                         
-    
+                        
                         {{-- start  --}}
                         <li class="nav-item">
                             <a href="{{ route('options.index') }}" class="nav-link">
