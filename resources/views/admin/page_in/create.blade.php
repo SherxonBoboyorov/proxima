@@ -8,14 +8,14 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Добавить Направления</h4>
+                    <h4 class="page-title">Добавить информация</h4>
                 </div>
             </div>
             <div class="clearfix"></div>
         </div>
 
         <!-- end page title end breadcrumb -->
-        <form action="{{ route('promotional.store') }}" enctype="multipart/form-data" method="POST">
+        <form action="{{ route('page_in.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="card">
                 <div class="card-body">
@@ -74,6 +74,22 @@
                             @endif
                         </div>
                     </div>
+
+                    
+                    <div class="row" style="margin-top: 15px">
+                        <div class="col-md-6">
+                            <label for="icon">Иконка</label>
+                            <input type="file" name="icon" class="form-control-file">
+                            @if($errors->has('icon'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    {{ $errors->first('icon') }}
+                                </div>
+                            @endif
+                        </div>
+                    </div><br><br>
 
                       <div class="row" style="margin-top: 15px">
                         <div class="col-md-6">

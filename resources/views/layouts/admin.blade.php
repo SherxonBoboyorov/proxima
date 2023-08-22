@@ -59,12 +59,25 @@
                         </li>
                     {{-- end  --}}
 
+
+                        {{-- start  --}}
+                        <li class="nav-item">
+                            <a href="{{ route('video.index') }}" class="nav-link">
+                            <i class="nav-icon"></i>
+                            <p>
+                                Видео
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                            </a>
+                         </li>
+                        {{-- end  --}}
+
                        {{-- start  --}}
                        <li class="nav-item">
                         <a href="{{ route('page.index') }}" class="nav-link">
                         <i class="nav-icon"></i>
                         <p>
-                            About Us
+                            О Компания 
                             <i class="right fas fa-angle-left"></i>
                         </p>
                         </a>
@@ -72,16 +85,18 @@
                     {{-- end  --}}
 
                     {{-- start  --}}
-                      <li class="nav-item">
-                        <a href="{{ route('video.index') }}" class="nav-link">
+                    <li class="nav-item">
+                        <a href="{{ route('page_in.index') }}" class="nav-link">
                         <i class="nav-icon"></i>
                         <p>
-                            Видео
+                            О Компания информация
                             <i class="right fas fa-angle-left"></i>
                         </p>
                         </a>
                      </li>
                     {{-- end  --}}
+
+                
 
 
                         

@@ -8,13 +8,13 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Все Направления</h4>
+                    <h4 class="page-title">Все информация</h4>
                 </div>
             </div>
             <div class="clearfix"></div>
         </div>
 
-             <a href="{{ route('promotional.create')}}" class="btn bg-success mb-2">Добавить Направления +</a>
+             <a href="{{ route('page_in.create')}}" class="btn bg-success mb-2">Добавить информация +</a>
 
 
         <div class="card">
@@ -42,21 +42,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($promotionals as $promotional)
+                        @foreach ($page_ins as $page_in)
                         <tr>
-                            <td>{{ $promotional->id }}</td>
+                            <td>{{ $page_in->id }}</td>
                             <td>
-                                <img src="{{ asset($promotional->image) }}" alt="" width="35" height="35">
+                                <img src="{{ asset($page_in->image) }}" alt="" width="35" height="35">
                             </td>
-                            <td>{{ $promotional->title_uz }}</td>
-                            <td>{{ $promotional->title_ru }}</td>
+                            <td>{{ $page_in->title_ru }}</td>
+                            <td>{{ $page_in->title_uz }}</td>
                             <td>
-                                <a href="{{ route('promotional.edit', $promotional->id) }}" class="btn btn-primary btn-icon">
+                                <a href="{{ route('page_in.edit', $page_in->id) }}" class="btn btn-primary btn-icon">
                                     <i class="fa fa-edit">Изменить</i>
                                 </a>
                             </td>
                             <td>
-                                <form action="{{ route('promotional.destroy', $promotional->id) }}" method="POST">
+                                <form action="{{ route('page_in.destroy', $page_in->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-icon">
