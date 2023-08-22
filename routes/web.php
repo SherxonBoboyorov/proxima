@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\EfficiencyController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -26,7 +27,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'options' => OptionsController::class,
         'promotional' => PromotionalController::class,
         'video' => VideoController::class,
-        'page_in' => PageInController::class
+        'page_in' => PageInController::class,
+        'efficiency' => EfficiencyController::class
 
     ]);
 });

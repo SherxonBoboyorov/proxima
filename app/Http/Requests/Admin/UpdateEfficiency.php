@@ -28,8 +28,8 @@ class UpdateEfficiency extends FormRequest
             'title_uz' => 'required|string|max:255',
             'content_ru' => 'required',
             'content_uz' => 'required',
-            'statistic_ru' => 'required|string|max:255',
-            'statistic_uz' => 'required|string|max:255',
+            // 'statistic_ru' => 'required|string|max:255',
+            // 'statistic_uz' => 'required|string|max:255',
             'statistic_content_ru' => 'required|',
             'statistic_content_uz' => 'required|',
         ];
