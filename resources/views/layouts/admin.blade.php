@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>@yield('title')</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -129,6 +130,18 @@
                         <i class="nav-icon"></i>
                         <p>
                             Команду
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                        </a>
+                     </li>
+                    {{-- end  --}}
+
+                       {{-- start  --}}
+                       <li class="nav-item">
+                        <a href="{{ route('project.index') }}" class="nav-link">
+                        <i class="nav-icon"></i>
+                        <p>
+                            Project
                             <i class="right fas fa-angle-left"></i>
                         </p>
                         </a>

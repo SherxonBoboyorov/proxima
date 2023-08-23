@@ -1,0 +1,46 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('projects', function (Blueprint $table) {
+            $table->id();
+
+            $table->string('image');
+
+            $table->string('title_ru');
+            $table->string('title_uz');
+            
+            $table->text('sub_content_ru');
+            $table->text('sub_content_uz');
+
+            $table->text('statistic_ru')->nullable();
+            $table->text('statistic_uz')->nullable();
+            
+            $table->text('content_ru');
+            $table->text('content_uz');
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('projects');
+    }
+};
