@@ -138,6 +138,7 @@
                             </div>
                             @endif
                         </div>
+                    </div>
 
 
                     <div class="row" style="margin-top: 15px">
@@ -153,7 +154,9 @@
                                 </div>
                             @endif
                         </div>
-                    </div>
+                    </div><br>
+
+
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-success btn-block">Отправить</button>

@@ -138,6 +138,7 @@
                             </div>
                             @endif
                         </div>
+                    </div>
 
 
                     <div class="row" style="margin-top: 15px">
