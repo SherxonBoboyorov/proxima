@@ -44,9 +44,9 @@ class PromotionalController extends Controller
         $data['image'] = Promotional::uploadImage($request);
 
         if (Promotional::create($data)) {
-            return redirect()->route('promotional.index')->with('message', "created seccessfully");
+            return redirect()->route('promotional.index')->with('message', "информация успешно добавлена");
         }
-        return redirect()->route('promotional.index')->with('message', "unable to created");
+        return redirect()->route('promotional.index')->with('message', "Ошибка добавления информация");
     }
 
     /**
@@ -82,7 +82,7 @@ class PromotionalController extends Controller
     public function update(UpdatePromotional $request, $id)
     {
         if (!Promotional::find($id)) {
-            return redirect()->route('promotional.index')->with('message', "not fount");
+            return redirect()->route('promotional.index')->with('message', "Информация не найдено");
         }
 
         $promotional = Promotional::find($id);
@@ -91,9 +91,9 @@ class PromotionalController extends Controller
         $data['image'] = Promotional::updateImage($request, $promotional);
 
         if ($promotional->update($data)) {
-            return redirect()->route('promotional.index')->with('message', "changed successfully");
+            return redirect()->route('promotional.index')->with('message', "изменено успешно!!!");
         }
-        return redirect()->route('promotional.index')->with('message', "Unable to update ");
+        return redirect()->route('promotional.index')->with('message', "изменено не успешно!!!");
     }
 
     /**
@@ -105,7 +105,7 @@ class PromotionalController extends Controller
     public function destroy($id)
     {
         if (!Promotional::find($id)) {
-            return redirect()->route('promotional.index')->with('message', "not found");
+            return redirect()->route('promotional.index')->with('message', "Информация не найдено");
         }
 
         $promotional = Promotional::find($id);
@@ -115,8 +115,8 @@ class PromotionalController extends Controller
         }
 
         if ($promotional->delete()) {
-            return redirect()->route('promotional.index')->with('message', "deleted successfully");
+            return redirect()->route('promotional.index')->with('message', "успешно удалено!!!");
         }
-        return redirect()->route('promotional.index')->with('message', "unable to delete ");
+        return redirect()->route('promotional.index')->with('message', "не удалось успешно удалить!!!");
     }
 }

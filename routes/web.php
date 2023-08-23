@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\OptionsController;
 use App\Http\Controllers\Admin\PageInController;
 use App\Http\Controllers\Admin\PromotionalController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\VideoController;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
@@ -30,7 +31,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'video' => VideoController::class,
         'page_in' => PageInController::class,
         'efficiency' => EfficiencyController::class,
-        'article' => ArticleController::class
+        'article' => ArticleController::class,
+        'team' => TeamController::class
 
     ]);
 });
