@@ -6,8 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Models\ProjectGallary;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Http\RedirectResponse;
+// use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -41,7 +40,7 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return Response
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         $input = $request->all();
 
@@ -160,9 +159,9 @@ class ProjectController extends Controller
             $image = $project->image;
         }
 
-        $project->$image = $image;
-        $project->title_ru = $input['title_ru'] ?? null;
-        $project->title_uz = $input['title_uz'] ?? null;
+        $project->image = $image;
+        $project->title_ru = $input['title_ru'];
+        $project->title_uz = $input['title_uz'];
         $project->sub_content_ru = $input['sub_content_ru'] ?? null;
         $project->sub_content_uz = $input['sub_content_uz'] ?? null;
         $project->statistic_ru = $input['statistic_ru'] ?? null;
@@ -172,9 +171,11 @@ class ProjectController extends Controller
         $project->save();
 
 
-        foreach ($project->galleries as $gallery) {
+
+        foreach($project->gallaries as $gallery) {
             $gallery->delete();
         }
+
 
         if (isset($input['galleries']) && $input['galleries'] !== null && json_decode($input['galleries'], true)) {
             foreach(json_decode($input['galleries'], true) as $gallery) {

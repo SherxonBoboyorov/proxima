@@ -176,14 +176,13 @@
 @endsection
 
 @section('custom_js')
-
-<script>
+   <script> 
 
     // Gallery save, delete
     $(document).ready(function() {
 
-        var galleryData = {!! $project->galleries->toJson(JSON_UNESCAPED_UNICODE, JSON_PRETTY_PRINT) !!catch};
-        renderGallery()
+        var galleryData = {!! $project->gallaries->toJson(JSON_UNESCAPED_UNICODE, JSON_PRETTY_PRINT) !!};
+            renderGallery()
 
         $('#save_gallery').on('click', function() {
             var image = $('#gallery').val();
@@ -310,4 +309,5 @@
 
     tinymce.init(editor_config);
 </script>
+
 @endsection
