@@ -11,6 +11,8 @@ use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\OptionsController;
 use App\Http\Controllers\Admin\PageInController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductImageUploadController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\PromotionalController;
 use App\Http\Controllers\Admin\QuestionController;
@@ -37,11 +39,16 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'article' => ArticleController::class,
         'team' => TeamController::class,
         'project' => ProjectController::class,
-        'question' => QuestionController::class
+        'question' => QuestionController::class,
+        'product' => ProductController::class
     ]);
     
-    Route::post('file-upload', [FileUploadController::class, 'upload'])->name('file_upload');
-    Route::post('file-delete', [FileUploadController::class, 'delete'])->name('file_delete');
+    Route::post('file-uploadproject', [FileUploadController::class, 'upload'])->name('file_uploadproject');
+    Route::post('file-deleteproject', [FileUploadController::class, 'delete'])->name('file_deleteproject');
+
+     
+    Route::post('file-upload', [ProductImageUploadController::class, 'upload'])->name('file_upload');
+    Route::post('file-delete', [ProductImageUploadController::class, 'delete'])->name('file_delete');
 });
 
 

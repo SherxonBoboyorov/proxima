@@ -197,7 +197,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: '{{ route('file_upload') }}',
+                url: '{{ route('file_uploadproject') }}',
                 cache : false,
                 contentType: false,
                 processData: false,
@@ -253,7 +253,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: '{{ route('file_delete') }}',
+                url: '{{ route('file_deleteproject') }}',
                 cache : false,
                 contentType: false,
                 processData: false,
