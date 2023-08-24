@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\OptionsController;
 use App\Http\Controllers\Admin\PageInController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\PromotionalController;
+use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\VideoController;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
@@ -35,8 +36,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'efficiency' => EfficiencyController::class,
         'article' => ArticleController::class,
         'team' => TeamController::class,
-        'project' => ProjectController::class
-
+        'project' => ProjectController::class,
+        'question' => QuestionController::class
     ]);
     
     Route::post('file-upload', [FileUploadController::class, 'upload'])->name('file_upload');

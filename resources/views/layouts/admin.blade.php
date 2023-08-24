@@ -142,7 +142,18 @@
                     {{-- end  --}}
 
 
-                        
+                      {{-- start  --}}
+                      <li class="nav-item">
+                        <a href="{{ route('question.index') }}" class="nav-link">
+                        <i class="nav-icon fa fa-question-circle"></i>
+                        <p>
+                            Вопросы
+                        </p>
+                        </a>
+                     </li>
+                    {{-- end  --}}
+
+
                         {{-- start  --}}
                         <li class="nav-item">
                             <a href="{{ route('options.index') }}" class="nav-link">
