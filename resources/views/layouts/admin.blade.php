@@ -39,10 +39,10 @@
                     {{-- start  --}}
                        <li class="nav-item">
                         <a href="{{ route('slider.index') }}" class="nav-link">
-                        <i class="nav-icon"></i>
+                        <i class="nav-icon fas fa-sliders-h"></i>
                         <p>
                             Слайдер
-                             <i class="right fas fa-angle-left"></i>
+                             
                         </p>
                         </a>
                       </li>
@@ -51,10 +51,10 @@
                     {{-- start  --}}
                         <li class="nav-item">
                            <a href="{{ route('promotional.index') }}" class="nav-link">
-                           <i class="nav-icon"></i>
+                           {{-- <i class="nav-icon"></i> --}}
+                           <i class="nav-icon fas fa-directions"></i>
                            <p>
                                Направления
-                            <i class="right fas fa-angle-left"></i>
                           </p>
                           </a>
                         </li>
@@ -64,10 +64,9 @@
                         {{-- start  --}}
                         <li class="nav-item">
                             <a href="{{ route('video.index') }}" class="nav-link">
-                            <i class="nav-icon"></i>
+                            <i class="nav-icon fa-solid fa-video"></i>
                             <p>
                                 Видео
-                                <i class="right fas fa-angle-left"></i>
                             </p>
                             </a>
                          </li>
@@ -77,10 +76,9 @@
                          {{-- start  --}}
                          <li class="nav-item">
                             <a href="{{ route('efficiency.index') }}" class="nav-link">
-                            <i class="nav-icon"></i>
+                            <i class="nav-icon fas fa-seedling"></i>
                             <p>
-                                Высокая эффективность
-                                <i class="right fas fa-angle-left"></i>
+                                Высокая эффективност
                             </p>
                             </a>
                          </li>
@@ -89,10 +87,9 @@
                        {{-- start  --}}
                        <li class="nav-item">
                         <a href="{{ route('page.index') }}" class="nav-link">
-                        <i class="nav-icon"></i>
+                        <i class="nav-icon fas fa-building"></i>
                         <p>
                             О Компания 
-                            <i class="right fas fa-angle-left"></i>
                         </p>
                         </a>
                      </li>
@@ -101,10 +98,9 @@
                     {{-- start  --}}
                     <li class="nav-item">
                         <a href="{{ route('page_in.index') }}" class="nav-link">
-                        <i class="nav-icon"></i>
+                        <i class="nav-icon fas fa-square-plus"></i>
                         <p>
-                            О Компания информация
-                            <i class="right fas fa-angle-left"></i>
+                            Компания информация
                         </p>
                         </a>
                      </li>
@@ -113,10 +109,9 @@
                        {{-- start  --}}
                        <li class="nav-item">
                         <a href="{{ route('article.index') }}" class="nav-link">
-                        <i class="nav-icon"></i>
+                        <i class="nav-icon fas fa-newspaper"></i>
                         <p>
                             Новости
-                            <i class="right fas fa-angle-left"></i>
                         </p>
                         </a>
                      </li>
@@ -127,10 +122,9 @@
                       {{-- start  --}}
                       <li class="nav-item">
                         <a href="{{ route('team.index') }}" class="nav-link">
-                        <i class="nav-icon"></i>
+                        <i class="nav-icon fas fa-user-plus"></i>
                         <p>
                             Команду
-                            <i class="right fas fa-angle-left"></i>
                         </p>
                         </a>
                      </li>
@@ -139,10 +133,9 @@
                        {{-- start  --}}
                        <li class="nav-item">
                         <a href="{{ route('project.index') }}" class="nav-link">
-                        <i class="nav-icon"></i>
+                        <i class="nav-icon fas fa-diagram-project"></i>
                         <p>
-                            Project
-                            <i class="right fas fa-angle-left"></i>
+                            Проект
                         </p>
                         </a>
                      </li>
@@ -153,10 +146,9 @@
                         {{-- start  --}}
                         <li class="nav-item">
                             <a href="{{ route('options.index') }}" class="nav-link">
-                            <i class="nav-icon"></i>
+                            <i class="nav-icon fas fa-filter"></i>
                             <p>
-                                параметры
-                                <i class="right fas fa-angle-left"></i>
+                                Параметры
                             </p>
                             </a>
                         </li>

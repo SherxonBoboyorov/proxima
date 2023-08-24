@@ -5,8 +5,9 @@
 <div class="page-content-wrapper ">
 
     <div class="container-fluid">
-    <form action="{{ route('project.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('project.update', $project->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
+    @method('PUT')
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -14,7 +15,7 @@
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-6">
                             <label for="title_uz">Заголовок [Uzbek]</label>
-                            <input type="text" id="title_uz" class="form-control" name="title_uz">
+                            <input type="text" id="title_uz" value="{{ $project->title_uz }}" class="form-control" name="title_uz">
                             @if($errors->has('title_uz'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -26,7 +27,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="title_ru">Заголовок [Russian]</label>
-                            <input type="text" id="title_ru" class="form-control" name="title_ru">
+                            <input type="text" id="title_ru" value="{{ $project->title_ru }}" class="form-control" name="title_ru">
                             @if($errors->has('title_ru'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -41,7 +42,7 @@
                      <div class="row" style="margin-top: 15px">
                         <div class="col-md-6">
                             <label for="sub_content_uz">Sub Content UZ</label>
-                            <textarea name="sub_content_uz" class="form-control" id="sub_content_uz" cols="30" rows="5"></textarea>
+                            <textarea name="sub_content_uz" class="form-control" id="sub_content_uz" cols="30" rows="5">{{ $project->sub_content_uz }}</textarea>
                             @if($errors->has('sub_content_uz'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -53,7 +54,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="sub_content_ru">Sub Content RU</label>
-                            <textarea name="sub_content_ru" class="form-control" id="sub_content_ru" cols="30" rows="5"></textarea>
+                            <textarea name="sub_content_ru" class="form-control" id="sub_content_ru" cols="30" rows="5">{{ $project->sub_content_ru }}</textarea>
                             @if($errors->has('sub_content_ru'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -69,7 +70,7 @@
                      <div class="row" style="margin-top: 15px">
                         <div class="col-md-3">
                             <label for="statistic_uz">Статистика [Uzbek]</label>
-                            <textarea name="statistic_uz" class="my-editor" id="statistic_uz" cols="30" rows="10"></textarea>
+                            <textarea name="statistic_uz" class="my-editor" id="statistic_uz" cols="30" rows="10">{{ $project->statistic_uz }}</textarea>
                             @if($errors->has('statistic_uz'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -82,7 +83,7 @@
                 
                         <div class="col-md-3">
                             <label for="statistic_ru">Статистика [Russian]</label>
-                            <textarea name="statistic_ru" class="my-editor" id="statistic_ru" cols="30" rows="10"></textarea>
+                            <textarea name="statistic_ru" class="my-editor" id="statistic_ru" cols="30" rows="10">{{ $project->statistic_ru }}</textarea>
                             @if($errors->has('statistic_ru'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -120,7 +121,7 @@
                      <div class="row" style="margin-top: 15px">
                         <div class="col-md-6">
                             <label for="content_uz">Контент [Uzbek]</label>
-                            <textarea name="content_uz" class="my-editor" id="content_uz" cols="30" rows="10"></textarea>
+                            <textarea name="content_uz" class="my-editor" id="content_uz" cols="30" rows="10">{{ $project->content_uz }}</textarea>
                             @if($errors->has('content_uz'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -133,7 +134,7 @@
                     
                         <div class="col-md-6">
                             <label for="content_ru">Контент [Russian]</label>
-                            <textarea name="content_ru" class="my-editor" id="content_ru" cols="30" rows="10"></textarea>
+                            <textarea name="content_ru" class="my-editor" id="content_ru" cols="30" rows="10">{{ $project->content_ru }}</textarea>
                             @if($errors->has('content_ru'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -156,13 +157,14 @@
                     <label for="image">Изображения</label>
                     <input type="file" name="image" id="image" class="form-control-file">
                     @if($errors->first('image'))
-                        <span class="text-danger">{{ $errors->first('image') }} he</span>
+                        <span class="text-danger">{{ $errors->first('image') }}</span>
                     @endif
+                    <img src="{{ asset($project->image) }}" style="margin-top: 15px;" width="150" height="150">
 
                     <hr>
 
                     <input type="hidden" name="galleries" id="galleries">
-                    <button class="btn btn-success btn-block">Сохранить</button>
+                    <button class="btn btn-success btn-block">Обновить</button>
                 </div>
             </div>
         </div>
@@ -174,135 +176,138 @@
 @endsection
 
 @section('custom_js')
-    <script>
-        // Gallery save, delete
-        $(document).ready(function() {
 
-            var galleryData = [];
+<script>
 
-            $('#save_gallery').on('click', function() {
-                var image = $('#gallery').val();
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
+    // Gallery save, delete
+    $(document).ready(function() {
 
-                var formdata = new FormData();
-                formdata.append('file', $("#gallery")[0].files[0]);
+        var galleryData = {!! $project->galleries->toJson(JSON_UNESCAPED_UNICODE, JSON_PRETTY_PRINT) !!catch};
+        renderGallery()
 
-                $.ajax({
-                    type: 'POST',
-                    url: '{{ route('file_upload') }}',
-                    cache : false,
-                    contentType: false,
-                    processData: false,
-                    data: formdata,
-                    beforeSend: function () {
-                        $(this).val("<i class='fa fa-spinner fa-pulse'></i>");
-                    },
-                    success: function (data) {
-                        galleryData.push({'id' : Math.round((new Date()).getTime() / 1000), 'image' : data});
-                        renderGallery();
-                        $(this).val("Сохранить изображении")
-                    },
-                    error: function (err) {
-                        console.error(err)
-                        $(this).val("Сохранить изображении")
-                    }
-                });
-            })
-
-            function renderGallery() {
-                $("#galleries_data").html('')
-                for(var gallery of galleryData) {
-                    $("#galleries_data").append("" +
-                        "<tr>" +
-                        "<td><img src='" + gallery.image + " ' width='50' height='50'/></td>" +
-                        "<td>" +
-                        "<button type='button' data-path=\""+ gallery.image +"\" data-id=\""+ gallery.id +"\" class='btn btn danger btn-icon remove_image'>" +
-                        "<i class='fa fa-trash text-dark'></i>" +
-                        "</button>" +
-                        "</td>" +
-                        "</tr>");
+        $('#save_gallery').on('click', function() {
+            var image = $('#gallery').val();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
-                $("#galleries").val('');
-                $('#galleries').val(JSON.stringify(galleryData))
-                $('#gallery').attr('type', 'text');
-                $('#gallery').attr('type', 'file')
+            });
+
+            var formdata = new FormData();
+            formdata.append('file', $("#gallery")[0].files[0]);
+
+            $.ajax({
+                type: 'POST',
+                url: '{{ route('file_upload') }}',
+                cache : false,
+                contentType: false,
+                processData: false,
+                data: formdata,
+                beforeSend: function () {
+                    $(this).val("<i class='fa fa-spinner fa-pulse'></i>");
+                },
+                success: function (data) {
+                    galleryData.push({'id' : Math.round((new Date()).getTime() / 1000), 'image' : data});
+                    renderGallery();
+                    $(this).val("Сохранить изображении")
+                },
+                error: function (err) {
+                    console.error(err)
+                    $(this).val("Сохранить изображении")
+                }
+            });
+        })
+
+        function renderGallery() {
+            $("#galleries_data").html('')
+            for(var gallery of galleryData) {
+                $("#galleries_data").append("" +
+                    "<tr>" +
+                    "<td><img src='" + gallery.image + " ' width='50' height='50'/></td>" +
+                    "<td>" +
+                    "<button type='button' data-path=\""+ gallery.image +"\" data-id=\""+ gallery.id +"\" class='btn btn danger btn-icon remove_image'>" +
+                    "<i class='fa fa-trash text-dark'></i>" +
+                    "</button>" +
+                    "</td>" +
+                    "</tr>");
             }
+            $("#galleries").val('');
+            $('#galleries').val(JSON.stringify(galleryData))
+            $('#gallery').attr('type', 'text');
+            $('#gallery').attr('type', 'file')
+        }
 
-            $(document).on('click', "button.remove_image", function () {
-                let dataPath = $(this).data('path');
-                let dataId = $(this).data('id');
+        $(document).on('click', "button.remove_image", function () {
+            let dataPath = $(this).data('path');
+            let dataId = $(this).data('id');
 
-                console.log(dataPath)
+            console.log(dataPath)
 
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
 
-                let formdata = new FormData();
-                formdata.append('file_path', dataPath);
+            let formdata = new FormData();
+            formdata.append('file_path', dataPath);
 
-                $.ajax({
-                    type: 'POST',
-                    url: '{{ route('file_delete') }}',
-                    cache : false,
-                    contentType: false,
-                    processData: false,
-                    data: formdata,
-                    success: function (data) {
-                        galleryData = galleryData.filter(function (query) {
-                            return query.id !== dataId
-                        });
-                        renderGallery()
-                    },
-                    error: function (err) {
-                        console.error(err)
-                    }
-                });
+            $.ajax({
+                type: 'POST',
+                url: '{{ route('file_delete') }}',
+                cache : false,
+                contentType: false,
+                processData: false,
+                data: formdata,
+                success: function (data) {
+                    galleryData = galleryData.filter(function (query) {
+                        return query.id !== dataId
+                    });
+                    renderGallery()
+                },
+                error: function (err) {
+                    console.error(err)
+                }
             });
         });
+    });
 
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.11/tinymce.min.js"></script>
-    <script>
-        var editor_config = {
-            path_absolute : "/",
-            selector: "textarea.my-editor",
-            plugins: [
-                "advlist autolink lists link image charmap print preview hr anchor pagebreak",
-                "searchreplace wordcount visualblocks visualchars code fullscreen",
-                "insertdatetime media nonbreaking save table contextmenu directionality",
-                "emoticons template paste textcolor colorpicker textpattern"
-            ],
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
-            relative_urls: false,
-            file_browser_callback : function(field_name, url, type, win) {
-                var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
-                var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.11/tinymce.min.js"></script>
+<script>
+    var editor_config = {
+        path_absolute : "/",
+        selector: "textarea.my-editor",
+        plugins: [
+            "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+            "searchreplace wordcount visualblocks visualchars code fullscreen",
+            "insertdatetime media nonbreaking save table contextmenu directionality",
+            "emoticons template paste textcolor colorpicker textpattern"
+        ],
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
+        relative_urls: false,
+        file_browser_callback : function(field_name, url, type, win) {
+            var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+            var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
 
-                var cmsURL = editor_config.path_absolute + 'laravel-filemanager?field_name=' + field_name;
-                if (type == 'image') {
-                    cmsURL = cmsURL + "&type=Images";
-                } else {
-                    cmsURL = cmsURL + "&type=Files";
-                }
-
-                tinyMCE.activeEditor.windowManager.open({
-                    file : cmsURL,
-                    title : 'Filemanager',
-                    width : x * 0.8,
-                    height : y * 0.8,
-                    resizable : "yes",
-                    close_previous : "no"
-                });
+            var cmsURL = editor_config.path_absolute + 'laravel-filemanager?field_name=' + field_name;
+            if (type == 'image') {
+                cmsURL = cmsURL + "&type=Images";
+            } else {
+                cmsURL = cmsURL + "&type=Files";
             }
-        };
 
-        tinymce.init(editor_config);
-    </script>
+            tinyMCE.activeEditor.windowManager.open({
+                file : cmsURL,
+                title : 'Filemanager',
+                width : x * 0.8,
+                height : y * 0.8,
+                resizable : "yes",
+                close_previous : "no"
+            });
+        }
+    };
+
+    tinymce.init(editor_config);
+</script>
 @endsection
