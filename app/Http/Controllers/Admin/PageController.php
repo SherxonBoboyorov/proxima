@@ -45,9 +45,9 @@ class PageController extends Controller
         $data['image'] = Page::uploadImage($request);
 
         if (Page::create($data)) {
-            return redirect()->route('page.index')->with('message', 'Created successfully');
+            return redirect()->route('page.index')->with('message', 'информация успешно добавлена');
         }
-        return redirect()->route('page.index')->back()->with('message', 'Error creating');
+        return redirect()->route('page.index')->back()->with('message', 'Ошибка добавления информация');
     }
 
     /**
@@ -89,10 +89,10 @@ class PageController extends Controller
 
 
         if ($page->update($data)) {
-            return redirect()->route('page.index')->with('message', 'changed successfully!!!');
+            return redirect()->route('page.index')->with('message', 'изменено успешно!!!');
         }
 
-        return redirect()->route('page.index')->with('message', 'changed no successfully!!!');
+        return redirect()->route('page.index')->with('message', 'изменено не успешно!!!');
     }
 
     /**
