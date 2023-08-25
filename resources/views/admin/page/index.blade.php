@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">All About Us</h4>
+                        <h4 class="page-title">Все о нас</h4>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -34,10 +34,10 @@
                         <thead>
                         <tr>
                             <th style="width: 2%;">#</th>
-                            <th>Image</th>
-                            <th>Sub Content [Uzbek]</th>
-                            <th>Sub Content [Russian]</th>
-                            <th colspan="2" style="width: 2%;">Action</th>
+                            <th>Изображение</th>
+                            <th>Маленькое название [Uzbek]</th>
+                            <th>Маленькое название [Russian]</th>
+                            <th colspan="2" style="width: 2%;">Действий</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -51,7 +51,7 @@
                                 <td class="table_cart_list">{!! $page->sub_content_ru !!}</td>
                                 <td>
                                     <a href="{{ route('page.edit', $page->id) }}" class="btn btn-primary btn-icon">
-                                        <i class="fa fa-edit">Edit</i>
+                                        <i class="fa fa-edit">Изменить</i>
                                     </a>
                                 </td>
                                 {{-- <td>

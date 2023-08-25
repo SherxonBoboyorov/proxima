@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Add </h4>
+                    <h4 class="page-title">Добавить </h4>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -22,7 +22,7 @@
                 <div class="card-body">
                      <div class="row" style="margin-top: 15px">
                         <div class="col-md-6">
-                            <label for="sub_content_uz">Sub Content [Uzbek]</label>
+                            <label for="sub_content_uz">Маленькое название [Uzbek]</label>
                             <textarea name="sub_content_uz" class="form-control" id="sub_content_uz" cols="30" rows="5"></textarea>
                             @if($errors->has('sub_content_uz'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -37,7 +37,7 @@
 
                      <div class="row" style="margin-top: 15px">
                         <div class="col-md-6">
-                            <label for="sub_content_ru">Sub Content [Russian]</label>
+                            <label for="sub_content_ru">Маленькое название [Russian]</label>
                             <textarea name="sub_content_ru" class="form-control" id="sub_content_ru" cols="30" rows="5"></textarea>
                             @if($errors->has('sub_content_ru'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -53,7 +53,7 @@
 
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
-                            <label for="content_uz">Content [uzbek]</label>
+                            <label for="content_uz">Контент [uzbek]</label>
                             <textarea name="content_uz" class="my-editor" id="content_uz" cols="30" rows="10"></textarea>
                             @if($errors->has('content_uz'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -67,7 +67,7 @@
                     </div>
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
-                            <label for="content_ru">Content [Russian]</label>
+                            <label for="content_ru">Контент [Russian]</label>
                             <textarea name="content_ru" class="my-editor" id="content_ru" cols="30" rows="10"></textarea>
                             @if($errors->has('content_ru'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -136,7 +136,7 @@
 
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-6">
-                            <label for="image">Image</label>
+                            <label for="image">Изображение</label>
                             <input type="file" name="image" class="form-control-file">
                             @if($errors->has('image'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -152,7 +152,7 @@
 
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-success btn-block">Save</button>
+                            <button type="submit" class="btn btn-success btn-block">Сохранить</button>
                         </div>
                     </div>
                 </div>
