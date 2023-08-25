@@ -118,6 +118,18 @@
                     {{-- end  --}}
 
 
+                    {{-- start  --}}
+                    <li class="nav-item">
+                        <a href="{{ route('office.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-address-card"></i>
+                        <p>
+                            Офис
+                        </p>
+                        </a>
+                     </li>
+                    {{-- end  --}}
+
+
 
                       {{-- start  --}}
                       <li class="nav-item">

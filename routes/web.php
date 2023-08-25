@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\OfficeController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\OptionsController;
@@ -40,7 +41,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'team' => TeamController::class,
         'project' => ProjectController::class,
         'question' => QuestionController::class,
-        'product' => ProductController::class
+        'product' => ProductController::class,
+        'office' => OfficeController::class
     ]);
     
     Route::post('file-uploadproject', [FileUploadController::class, 'upload'])->name('file_uploadproject');
