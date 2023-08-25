@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Add options</h4>
+                        <h4 class="page-title">Добавить Параметры</h4>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -23,18 +23,15 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-8">
-                              <label for="key">Key</label>
+                              <label for="key">Ключ</label>
                               <select name="key" id="key" class="form-control">
                                   <option value="address_uz">Address Uz</option>
                                   <option value="address_ru">Address Ru</option>
-                                  <option value="lanrdmarks_uz">Lanrdmarks UZ</option>
-                                  <option value="lanrdmarks_ru">Lanrdmarks RU</option>
                                   <option value="phone">Phone</option>
+                                  <option value="email">Email</option>
                                   <option value="map">Google or Yandex MAP</option>
                                   <option value="instagram">Instagram</option>
-                                  <option value="youtube">Youtube</option>
                                   <option value="facebook">Facebook</option>
-                                  <option value="twitter">Twitter</option>
                                   <option value="telegram">Telegram</option>
                               </select>
                               @if($errors->has('key'))
@@ -47,7 +44,7 @@
                               @endif
                           </div>
                           <div class="col-md-8">
-                            <label for="title_ru">Value</label>
+                            <label for="title_ru">Ценить</label>
                             <input type="text" id="value" class="form-control" name="value">
                             @if($errors->has('value'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -63,7 +60,7 @@
 
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-success btn-block">Save</button>
+                                <button type="submit" class="btn btn-success btn-block">Сохранить</button>
                             </div>
                         </div>
                     </div>

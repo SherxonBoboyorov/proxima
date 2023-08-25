@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Edit options</h4>
+                        <h4 class="page-title">Изменить Параметры</h4>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -24,18 +24,15 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-8">
-                                <label for="key">Key</label>
+                                <label for="key">Ключ</label>
                                 <select name="key" id="key"class="form-control">
                                     <option value="address_uz" @if($option->key == 'address_uz') selected @endif>Address UZ</option>
                                     <option value="address_ru" @if($option->key == 'address_ru') selected @endif>Address RU</option>
-                                    <option value="lanrdmarks_uz" @if($option->key == 'lanrdmarks_uz') selected @endif>Lanrdmarks UZ</option>
-                                    <option value="lanrdmarks_ru" @if($option->key == 'lanrdmarks_ru') selected @endif>Lanrdmarks RU</option>
                                     <option value="phone" @if($option->key == 'phone') selected @endif>Phone</option>
+                                    <option value="email" @if($option->key == 'email') selected @endif>Email</option>
                                     <option value="map" @if($option->key == 'map') selected @endif>Google or Yandex MAP</option>
                                     <option value="instagram" @if($option->key == 'instagram') selected @endif>Instagram</option>
-                                    <option value="youtube" @if($option->key == 'youtube') selected @endif>Youtube</option>
                                     <option value="facebook" @if($option->key == 'facebook') selected @endif>Facebook</option>
-                                    <option value="twitter" @if($option->key == 'twitter') selected @endif >Twitter</option>
                                     <option value="telegram" @if($option->key == 'telegram') selected @endif>Telegram</option>
                                 </select>
                                 @if($errors->has('key'))
@@ -48,7 +45,7 @@
                                 @endif
                             </div>
                             <div class="col-md-8">
-                                <label for="title_ru">Value</label>
+                                <label for="title_ru">Ценить</label>
                                 <input type="text" id="value" class="form-control" name="value" value="{{ $option->value }}">
                                 @if($errors->has('value'))
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -64,7 +61,7 @@
 
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-success btn-block">Update</button>
+                                <button type="submit" class="btn btn-success btn-block">Обновить</button>
                             </div>
                         </div>
                     </div>

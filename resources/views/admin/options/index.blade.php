@@ -10,13 +10,13 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">All options</h4>
+                    <h4 class="page-title">Все Параметры</h4>
                 </div>
             </div>
             <div class="clearfix"></div>
         </div>
 
-        <a href="{{ route('options.create')}}" class="btn bg-success mb-2">Add Options +</a>
+        <a href="{{ route('options.create')}}" class="btn bg-success mb-2">Добавить Параметры +</a>
 
 
         <div class="card">
@@ -37,9 +37,9 @@
                     <thead>
                         <tr>
                             <th style="width: 2%;">#</th>
-                            <th>Key</th>
-                            <th>Value</th>
-                            <th colspan="2" style="width: 2%;">Action</th>
+                            <th>Ключ</th>
+                            <th>Ценить</th>
+                            <th colspan="2" style="width: 2%;">Действий</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,7 +50,7 @@
                             <td>{{ $option->value }}</td>
                             <td>
                                 <a href="{{ route('options.edit', $option->id) }}" class="btn btn-primary btn-icon">
-                                    <i class="fa fa-edit">Edit</i>
+                                    <i class="fa fa-edit">Изменить</i>
                                 </a>
                             </td>
                             <td>
@@ -58,7 +58,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-icon">
-                                        <i class="fa fa-trash">Delete</i>
+                                        <i class="fa fa-trash">Удалить</i>
                                     </button>
                                 </form>
                             </td>
