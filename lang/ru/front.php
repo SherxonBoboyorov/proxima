@@ -1,35 +1,27 @@
 <?php
 
+// Russian
 return [
-     'kompaniya_haqida' => 'Про нашу компанию',
-     'bizning_filiallarimiz' => 'Наши точки',
-     'qayta_aloqa' => 'Мы рекламируем качественно и эффективно',
-     'surovnoma' => 'Оставьте заявку , и мы свяжемся с вами.',
-     'surov_qoldiring' => 'Оставьте заявку и мы свяжемся с вами',
-     'yuborish' => 'Отправить',
-     'fikrlar' => 'Отзывы наших клиентов',
-     'batafsil' => 'Подробнее',
-     'faq' => 'Часто задаваемые вопросы',
-     'reklama' => 'Рекламные интеграции',
-     'shartnoma' => 'Мы успешно заключили рекламные контракты со многими крупными компаниями в Узбекистане.',
-     'bizning_hamkorlarimiz' => 'Наши партнеры',
-     'kompaniyalarga_aylangan' => 'Нашими партнерами уже успели стать такие компании как:',
-     'bizning_kontaktlarimiz' => 'Наши контакты',
-     'biz_haqimizda' => 'О нас',
-     'filiallar' => 'Филиалы',
-     'hamkorlar' => 'Партнеры',
+     'kompaniya_haqida' => 'О компании',
+     'loyihalar' => 'Проекты',
+     'mahsulotlar' => 'Продукция',
+     'savollar' => 'Вопросы',
+     'videoni_tomosha_qiling' => 'Смотреть видео',
+     'yangiliklar' => 'Новости',
+     'barcha_yangiliklar' => 'Все новости',
+     'tugallangan_loyihalar' => 'Реализованные проекты',
+     'koproq' => 'Подробнее',
+     'bosh_safiha' => 'Главная',
+     'oldingi_yangiliklar' => 'Предыдущая новость',
+     'keyingi_yangiliklar' => 'Cледующая новость',
      'kontaktlar' => 'Контакты',
-     'himoyalangan' => 'Все права защищены',
-     'bosh_sahifa' => 'Главная',
-     'fikr_qoldiring' => 'Оставить отзыв',
-     'video_yuklash' => 'Загрузить видео',
-     'ism' => 'Имя',
-     'telefon' => 'Телефон',
-     'izoh' => 'Комментарий',
-     'moretext' => 'Мы открываем наши Рекламное агентство недвижимости по всему Узбекистану',
-     'raqamlarda' => 'Наша компания в цифрах'
-
-]
-
+     'jamoa' => 'Команда',
+     'orqaga' => 'Назад',
+     'tavsif' => 'Описание',
+     'texnik_xususiyatlari' => 'Технические характеристики',
+     'manzil' => 'Адрес',
+     'telefon_raqami' => 'Телефонный номер',
+     'email' => 'Электронная почта:'
+];
 
 ?>
