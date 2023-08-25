@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\PromotionalController;
 use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\VideoController;
+use App\Http\Controllers\Front\IndexController;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
 
@@ -59,7 +60,7 @@ Route::group(
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){ 
-        //
+        Route::get('/', [IndexController::class, 'homepage'])->name('/');
     });
 
 

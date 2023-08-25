@@ -52,7 +52,7 @@
 
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-12">
-                                <label for="description_uz">Контент [English]</label>
+                                <label for="description_uz">Контент [Uzbek]</label>
                                 <input type="text" id="description_uz" value="{{ $slider->description_uz }}" class="form-control" name="description_uz">
                                 @if($errors->has('description_uz'))
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -67,7 +67,7 @@
 
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-12">
-                                <label for="description_ru">Контент [Spanish]</label>
+                                <label for="description_ru">Контент [Russian]</label>
                                 <input type="text" id="description_ru" value="{{ $slider->description_ru }}" class="form-control" name="description_ru">
                                 @if($errors->has('description_ru'))
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -75,6 +75,21 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                         {{ $errors->first('description_ru') }}
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 15px">
+                            <div class="col-md-6">
+                                <label for="link">Link</label>
+                                <input type="text" id="link" value="{{ $slider->link }}" class="form-control" name="link">
+                                @if($errors->has('link'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        {{ $errors->first('link') }}
                                     </div>
                                 @endif
                             </div>
