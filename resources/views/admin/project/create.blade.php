@@ -40,7 +40,7 @@
 
                      <div class="row" style="margin-top: 15px">
                         <div class="col-md-6">
-                            <label for="sub_content_uz">Sub Content UZ</label>
+                            <label for="sub_content_uz">Ммаленькое название UZ</label>
                             <textarea name="sub_content_uz" class="form-control" id="sub_content_uz" cols="30" rows="5"></textarea>
                             @if($errors->has('sub_content_uz'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -52,7 +52,7 @@
                             @endif
                         </div>
                         <div class="col-md-6">
-                            <label for="sub_content_ru">Sub Content RU</label>
+                            <label for="sub_content_ru">Ммаленькое название RU</label>
                             <textarea name="sub_content_ru" class="form-control" id="sub_content_ru" cols="30" rows="5"></textarea>
                             @if($errors->has('sub_content_ru'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">

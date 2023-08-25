@@ -141,6 +141,17 @@
                      </li>
                     {{-- end  --}}
 
+                    {{-- start  --}}
+                    <li class="nav-item">
+                        <a href="{{ route('product.index') }}" class="nav-link">
+                        <i class="nav-icon fa-solid fa-cart-plus"></i>
+                        <p>
+                            Продукт
+                        </p>
+                        </a>
+                     </li>
+                    {{-- end  --}}
+
 
                       {{-- start  --}}
                       <li class="nav-item">
@@ -154,16 +165,7 @@
                     {{-- end  --}}
 
 
-                     {{-- start  --}}
-                     <li class="nav-item">
-                        <a href="{{ route('product.index') }}" class="nav-link">
-                        <i class="nav-icon fa fa-question-circle"></i>
-                        <p>
-                            product
-                        </p>
-                        </a>
-                     </li>
-                    {{-- end  --}}
+                     
 
 
                         {{-- start  --}}

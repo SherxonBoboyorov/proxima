@@ -43,9 +43,9 @@ class SliderController extends Controller
         $data = $request->all();
         $data['image'] = Slider::uploadImage($request);
         if (Slider::create($data)) {
-            return redirect()->route('slider.index')->with('message', 'Slider added successfully');
+            return redirect()->route('slider.index')->with('message', 'информация успешно добавлена');
         }
-        return redirect()->route('slider.index')->back()->with('message', 'Error adding slider');
+        return redirect()->route('slider.index')->back()->with('message', 'Ошибка добавления информация');
     }
 
     /**
@@ -86,10 +86,10 @@ class SliderController extends Controller
         $data['image'] = Slider::updateImage($request, $slider);
 
         if ($slider->update($data)) {
-            return redirect()->route('slider.index')->with('message', 'changed successfully!!!');
+            return redirect()->route('slider.index')->with('message', 'Изменено успешно!!!');
         }
 
-        return redirect()->route('slider.index')->with('message', 'changed no successfully!!!');
+        return redirect()->route('slider.index')->with('message', 'Изменено не успешно!!!');
     }
 
     /**
@@ -101,7 +101,7 @@ class SliderController extends Controller
     public function destroy($id)
     {
         if (!Slider::find($id)) {
-            return redirect()->route('slider.index')->with('message', "Slider not found");
+            return redirect()->route('slider.index')->with('message', "Информация не найдено");
         }
 
         $slider = Slider::find($id);
@@ -111,9 +111,9 @@ class SliderController extends Controller
         }
 
         if ($slider->delete()) {
-            return redirect()->route('slider.index')->with('message', "Slider deleted successfully");
+            return redirect()->route('slider.index')->with('message', "успешно удалено!!!");
         }
 
-        return redirect()->route('slider.index')->with('message', "Unable to delete slider");
+        return redirect()->route('slider.index')->with('message', "не удалось успешно удалить!!!");
     }
 }

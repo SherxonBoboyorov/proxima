@@ -22,7 +22,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label for="title_ru">Имя продукта [Uzbek]</label>
+                            <label for="title_ru">Имя продукта [Russian]</label>
                             <input type="text" name="title_ru" value="{{ $product->title_ru }}" id="title_ru" class="form-control">
                             @if($errors->first('title_ru'))
                                 <span class="text-danger">{{ $errors->first('title_ru') }}</span>
@@ -110,7 +110,7 @@
                                 <div class="tab-pane p-3" id="settings-1" role="tabpanel">
                                     <div class="row" style="margin-top: 15px">
                                         <div class="col-md-6">
-                                            <label for="specifications_uz">Технические характеристики [Latin Uzbek]</label>
+                                            <label for="specifications_uz">Технические характеристики [Uzbek]</label>
                                             <textarea name="specifications_uz" class="my-editor" id="specifications_uz" cols="10" rows="5" style="height: 150px;">{{ $product->specifications_uz }}</textarea>
                                             @if($errors->has('specifications_uz'))
                                             <div class="alert alert-success alert-dismissible fade show" role="alert">

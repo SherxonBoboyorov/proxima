@@ -8,13 +8,13 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">All Slider</h4>
+                        <h4 class="page-title">Все Слайдер</h4>
                     </div>
                 </div>
                 <div class="clearfix"></div>
             </div>
 
-            <a href="{{ route('slider.create')}}" class="btn bg-success mb-2">Add Slider +</a>
+            <a href="{{ route('slider.create')}}" class="btn bg-success mb-2">Добавить Слайдер +</a>
 
             <div class="card">
                 <div class="card-body">
@@ -34,10 +34,10 @@
                         <thead>
                         <tr>
                             <th style="width: 2%;">#</th>
-                            <th>Image</th>
-                            <th>Title [Uzbek]</th>
-                            <th>Title [Russian]</th>
-                            <th colspan="2" style="width: 2%; border-radius: 5px">Actions</th>
+                            <th>Изображение</th>
+                            <th>Заголовок [Uzbek]</th>
+                            <th>Заголовок [Russian]</th>
+                            <th colspan="2" style="width: 2%; border-radius: 5px">Действий</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -51,7 +51,7 @@
                                 <td>{{ $slider->title_uz }}</td>
                                 <td>
                                     <a href="{{ route('slider.edit', $slider->id) }}" class="btn btn-primary btn-icon">
-                                        <i class="fa fa-edit">Edit</i>
+                                        <i class="fa fa-edit">Изменить</i>
                                     </a>
                                 </td>
                                 <td>
@@ -59,7 +59,7 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-icon">
-                                            <i class="fa fa-trash">Delete</i>
+                                            <i class="fa fa-trash">Удалить</i>
                                         </button>
                                     </form>
                                 </td>

@@ -110,7 +110,7 @@
                                 <div class="tab-pane p-3" id="settings-1" role="tabpanel">
                                     <div class="row" style="margin-top: 15px">
                                         <div class="col-md-6">
-                                            <label for="specifications_uz">Технические характеристики [Latin Uzbek]</label>
+                                            <label for="specifications_uz">Технические характеристики [Uzbek]</label>
                                             <textarea name="specifications_uz" class="my-editor" id="specifications_uz" cols="10" rows="5" style="height: 150px;"></textarea>
                                             @if($errors->has('specifications_uz'))
                                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -224,10 +224,10 @@
                           <textarea name="meta_title_uz" id="meta_title_uz" class="form-control" cols="30" rows="5"></textarea>
                        </div> 
                     <br> 
-                     <div class="col-md-6">
-                       <label for="meta_title_ru">Meta Title RU</label>
-                       <textarea name="meta_title_ru" id="meta_title_ru" class="form-control" cols="30" rows="5"></textarea>
-                    </div>
+                        <div class="col-md-6">
+                        <label for="meta_title_ru">Meta Title RU</label>
+                        <textarea name="meta_title_ru" id="meta_title_ru" class="form-control" cols="30" rows="5"></textarea>
+                      </div>
                 </div>
 
                     <div class="row" style="margin-top: 6px">
