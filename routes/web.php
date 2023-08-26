@@ -20,7 +20,9 @@ use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Front\AboutController;
+use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\IndexController;
+use App\Http\Controllers\Front\LeaderController;
 use App\Http\Controllers\Front\NewsController;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
@@ -66,6 +68,8 @@ Route::group(
         Route::get('about', [AboutController::class, 'about'])->name('about');
         Route::get('news', [NewsController::class, 'list'])->name('news');
         Route::get('news/{slug}', [NewsController::class, 'show'])->name('new');
+        Route::get('contact', [ContactController::class, 'contact'])->name('contact');
+        Route::get('team', [LeaderController::class, 'team'])->name('team');
     });
 
 

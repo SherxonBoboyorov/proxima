@@ -10,7 +10,7 @@ class NewsController extends Controller
 {
     public function list()
     {
-        $news = Article::orderBy('created_at', 'DESC')->paginate(12);
+        $news = Article::orderBy('created_at', 'DESC')->paginate(6);
         return view('front.news.list', compact(
             'news'
         ));
