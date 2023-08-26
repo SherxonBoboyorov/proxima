@@ -18,30 +18,25 @@
 
       <!-- remove 4th child -->
       <div class="wrapper-centered mx-auto max-w-screen-xl py-5 flex flex-wrap justify-center items-start">
-        <!-- foreach start -->
-
+        @foreach($promotionals as $promotional)
         <div class="box p-5 [@media(min-width:768px)]:w-1/3 [@media(min-width:576px)]:w-1/2 [@media(max-width:576px)]:w-full">
           <div class="icon w-[100px] h-[100px] mx-auto">
-            <img src="./src/public/icons/icon-1.jpg" alt="" class="w-full h-full">
+            <img src="{{ asset($promotional->image) }}" alt="" class="w-full h-full">
           </div>
-          <div class="title text-center text-dimgray text-[24px] uppercase">Производство</div>
+          <div class="title text-center text-dimgray text-[24px] uppercase">{{ $promotional->{'title_' . app()->getLocale()} }}</div>
           <hr class="mx-auto w-[30px] bg-orange border-none h-[2px] my-3">
           <div class="description text-center text-dimgray text-[16px] max-h-[100px] overflow-hidden">
-            Ut enim ad minima
-            veniam, quis nostrum
-            exercitationem
-            veniam, quis nostrum
-            exercitationem
-            veniam, quis nostrum
-            exercitationem
+            {!! $promotional->{'content_' . app()->getLocale()} !!}
           </div>
         </div>
 
-        <!-- foreach end -->
+        @endforeach
       </div>
 
 
       <div id="videoWrapper" class="back-video w-full mx-auto max-sm:h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] cursor-pointer mt-6 relative">
+        @foreach($videos as $video)
+          
         <div class="video-play-wrapper absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <div class="mx-auto  play w-[40px] h-[40px] sm:w-[60px] sm:h-[60px] border p-2 sm:p-3 rounded-full border-[rgba(255,255,255,0.30)] bg-[rgba(255,255,255,0.20)]">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full" viewBox="0 0 54 54" fill="none">
@@ -53,121 +48,92 @@
             Смотреть видео
           </div>
         </div>
-        <a data-fancybox href="./src/public/videos/test-video.MOV" class="w-full h-full">
-          <img id="videoImg" class="w-full h-full object-cover" src="./src/public/images/video-img.jpg" />
+        <a data-fancybox href="{{ $video->video }}" class="w-full h-full">
+          <img id="videoImg" class="w-full h-full object-cover" src="{{ asset($video->image) }}" />
         </a>
+        @endforeach
       </div>
 
       <div class="facade-wrapper mx-auto max-sm:h-[320px] sm:h-[390px] md:h-[490px] lg:h-[590px] w-full relative">
-        <img src="./src/public/images/facade-img.jpg" alt="" class="w-full h-full object-cover">
+        @foreach($pages as $page)
+          
+        <img src="{{ asset($page->image) }}" alt="" class="w-full h-full object-cover">
         <div class="wrapper-centered w-1/2 absolute top-0 left-0 h-full bg-[#ffffffe8] z-10">
         </div>
-
-        <div
-          class="wrapper-centered max-w-screen-xl px-5 w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2  h-full bg-[#ff000000] z-20">
+        <div class="wrapper-centered max-w-screen-xl px-5 w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2  h-full bg-[#ff000000] z-20">
           <div class="left-part w-1/2 h-full flex justify-start items-center">
             <div class="box p-5 pl-0 w-full -mt-2">
               <div class="icon md:w-[100px] md:h-[100px] sm:w-[80px] sm:h-[80px] max-sm:w-[60px] max-sm:h-[60px] ">
-                <img src="./src/public/icons/facade-icon.png" alt="" class="w-full h-full -ml-3">
+                <img src="{{ asset('front/src/public/icons/facade-icon.png') }}" alt="" class="w-full h-full -ml-3">
               </div>
-              <div
-                class="title text-dimgray [@media(min-width:768px)]:text-[24px] [@media(min-width:576px)]:text-[20px] [@media(min-width:480px)]:text-[18px] [@media(max-width:480px)]:text-[16px] uppercase">
+              <div class="title text-dimgray [@media(min-width:768px)]:text-[24px] [@media(min-width:576px)]:text-[20px] [@media(min-width:480px)]:text-[18px] [@media(max-width:480px)]:text-[16px] uppercase">
                 O Компания</div>
               <hr class="w-[30px] bg-orange border-none h-[2px] md:my-3 max-md:my-1">
-              <div
-                class="description text-dimgray  [@media(min-width:768px)]:max-h-[145px] [@media(min-width:576px)]:max-h-[110px] [@media(max-width:576px)]:max-h-[55px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui
+              <div class="description text-dimgray  [@media(min-width:768px)]:max-h-[145px] [@media(min-width:576px)]:max-h-[110px] [@media(max-width:576px)]:max-h-[55px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
+               {{ $page->{'sub_content_' . app()->getLocale()} }}
               </div>
               <div class="sm:mt-4 max-sm:mt-2">
-                <a href="#"
-                  class="border border-orange  py-2 px-3 text-orange uppercase [@media(min-width:768px)]:text-[14px] [@media(min-width:576px)]:text-[12px] [@media(max-width:576px)]:text-[10px]">Подробнее</a>
+                <a href="{{ route('about') }}" class="border border-orange  py-2 px-3 text-orange uppercase [@media(min-width:768px)]:text-[14px] [@media(min-width:576px)]:text-[12px] [@media(max-width:576px)]:text-[10px]">Подробнее</a>
               </div>
             </div>
           </div>
         </div>
+        @endforeach
+
       </div>
 
-      <div
-        class="efficiency-wrapper mx-auto overflow-hidden [@media(min-width:768px)]:h-[600px] [@media(min-width:576px)]:h-[520px] [@media(min-width:480px)]:h-[420px] [@media(max-width:480px)]:h-[380px] max-w-screen-xl flex justify-between">
+      <div class="efficiency-wrapper mx-auto overflow-hidden [@media(min-width:768px)]:h-[600px] [@media(min-width:576px)]:h-[520px] [@media(min-width:480px)]:h-[420px] [@media(max-width:480px)]:h-[380px] max-w-screen-xl flex justify-between">
+          @foreach($efficiencies as $efficiency)
+            
         <div class="img-content w-1/2 h-full">
-          <img src="./src/public/images/efficiency-img.png" alt="" class="w-full h-full object-cover">
+          <img src="{{ asset($efficiency->image) }}" alt="" class="w-full h-full object-cover">
         </div>
         <div class="text-content w-1/2 h-full flex items-center md:pl-10 max-md:pl-5">
           <div class="box p-5 pl-0 w-full -mt-2">
             <div class="icon md:w-[100px] md:h-[100px] sm:w-[80px] sm:h-[80px] max-sm:w-[60px] max-sm:h-[60px] ">
-              <img src="./src/public/icons/efficiency-icon.png" alt="" class="w-full h-full -ml-3">
+              <img src="{{ asset($efficiency->icon) }}" alt="" class="w-full h-full -ml-3">
             </div>
-            <div
-              class="title text-dimgray [@media(min-width:768px)]:text-[24px] [@media(min-width:576px)]:text-[20px] [@media(min-width:480px)]:text-[18px] [@media(max-width:480px)]:text-[16px] uppercase">
-              высокая ЭФФЕКТИВНОСТь</div>
+            <div class="title text-dimgray [@media(min-width:768px)]:text-[24px] [@media(min-width:576px)]:text-[20px] [@media(min-width:480px)]:text-[18px] [@media(max-width:480px)]:text-[16px] uppercase">
+            {{ $efficiency->{'title_' . app()->getLocale()} }}</div>
             <hr class="w-[30px] bg-orange border-none h-[2px] md:my-3 max-md:my-1">
-            <div
-              class="description text-dimgray  [@media(min-width:768px)]:max-h-[145px] [@media(min-width:576px)]:max-h-[110px] [@media(max-width:576px)]:max-h-[55px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui
+            <div class="description text-dimgray  [@media(min-width:768px)]:max-h-[145px] [@media(min-width:576px)]:max-h-[110px] [@media(max-width:576px)]:max-h-[55px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
+              {!! $efficiency->{'content_' . app()->getLocale()} !!}
             </div>
             <hr class="bg-[#E0E0E0] sm:my-4 max-sm:my-2">
-            <div class="flex justify-between flex-wrap">
-              <div class="left-text md:w-1/2 max-md:w-full pr-3 mb-1">
-                <div
-                  class="title text-dimgray [@media(min-width:768px)]:text-[22px] [@media(min-width:576px)]:text-[18px] [@media(min-width:480px)]:text-[16px] [@media(max-width:480px)]:text-[14px] uppercase">
-                  400 кВт*ч/год</div>
-                <div
-                  class="description text-dimgray  [@media(min-width:768px)]:max-h-[50px] [@media(min-width:576px)]:max-h-[42px] [@media(max-width:576px)]:max-h-[38px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </div>
-              </div>
-              <div class="right-text md:w-1/2 max-md:w-full">
-                <div
-                  class="title text-dimgray [@media(min-width:768px)]:text-[22px] [@media(min-width:576px)]:text-[18px] [@media(min-width:480px)]:text-[16px] [@media(max-width:480px)]:text-[14px] uppercase">
-                  до 20%</div>
-                <div
-                  class="description text-dimgray  [@media(min-width:768px)]:max-h-[50px] pr-2 [@media(min-width:576px)]:max-h-[42px] [@media(max-width:576px)]:max-h-[38px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </div>
-              </div>
+              {!! $efficiency->{'statistic_content_' . app()->getLocale()} !!}
 
             </div>
           </div>
         </div>
+        @endforeach
       </div>
 
       <div class="project-wrapper mx-auto max-sm:h-[320px] sm:h-[390px] md:h-[490px] lg:h-[590px] w-full relative">
-        <img src="./src/public/images/project-img.png" alt="" class="w-full h-full object-cover">
+        @foreach($projects as $project)
+        <img src="{{ asset($project->image) }}" alt="" class="w-full h-full object-cover">
         <div class="wrapper-centered w-1/2 absolute top-0 left-0 h-full bg-[#ffffffe8] z-10">
         </div>
-
-        <div
-          class="wrapper-centered max-w-screen-xl px-5 w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2  h-full bg-[#ff000000] z-20">
+        <div class="wrapper-centered max-w-screen-xl px-5 w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2  h-full bg-[#ff000000] z-20">
           <div class="left-part w-1/2 h-full flex justify-start items-center">
             <div class="box p-5 pl-0 w-full -mt-2">
               <div class="icon md:w-[100px] md:h-[100px] sm:w-[80px] sm:h-[80px] max-sm:w-[60px] max-sm:h-[60px] ">
-                <img src="./src/public/icons/project-icon.png" alt="" class="w-full h-full -ml-3">
+                <img src="{{ asset($project->icon) }}" alt="" class="w-full h-full -ml-3">
               </div>
-              <div
-                class="title text-dimgray [@media(min-width:768px)]:text-[24px] [@media(min-width:576px)]:text-[20px] [@media(min-width:480px)]:text-[18px] [@media(max-width:480px)]:text-[16px] uppercase">
+              <div class="title text-dimgray [@media(min-width:768px)]:text-[24px] [@media(min-width:576px)]:text-[20px] [@media(min-width:480px)]:text-[18px] [@media(max-width:480px)]:text-[16px] uppercase">
                 Наши проекты</div>
               <hr class="w-[30px] bg-orange border-none h-[2px] md:my-3 max-md:my-1">
-              <div
-                class="description text-dimgray  [@media(min-width:768px)]:max-h-[145px] [@media(min-width:576px)]:max-h-[110px] [@media(max-width:576px)]:max-h-[55px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
+              <div class="description text-dimgray  [@media(min-width:768px)]:max-h-[145px] [@media(min-width:576px)]:max-h-[110px] [@media(max-width:576px)]:max-h-[55px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui
               </div>
               <div class="sm:mt-4 max-sm:mt-2">
-                <a href="#"
-                  class="border border-orange  py-2 px-3 text-orange uppercase [@media(min-width:768px)]:text-[14px] [@media(min-width:576px)]:text-[12px] [@media(max-width:576px)]:text-[10px]">Подробнее</a>
+                <a href="#" class="border border-orange  py-2 px-3 text-orange uppercase [@media(min-width:768px)]:text-[14px] [@media(min-width:576px)]:text-[12px] [@media(max-width:576px)]:text-[10px]">Подробнее</a>
               </div>
 
             </div>
           </div>
         </div>
+        @endforeach
       </div>
 
       <!-- remove 4th child -->

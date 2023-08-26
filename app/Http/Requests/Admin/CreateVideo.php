@@ -25,7 +25,7 @@ class CreateVideo extends FormRequest
     {
         return [
             'image' => 'required|image|mimes:png,jpg,jpeg,webp',
-            'video' => 'required|mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts,qt|max:2048',
+            'video' => 'required|mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts,qt',
         ];
     }
 }
