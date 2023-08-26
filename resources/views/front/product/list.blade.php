@@ -23,29 +23,21 @@
           </div>
           <div class="body-content w-full">
             <div class="products my-7 justify-between flex flex-wrap">
-              <!-- foreach start -->
-
-              <div
-                class="product-item [@media(min-width:768px)]:w-[32%] [@media(min-width:768px)]:mb-5 [@media(max-width:768px)]:mb-3 [@media(min-width:500px)]:w-[49%] [@media(max-width:500px)]:w-full">
-                <a href="./product_in.html" class="h-full border p-3 block w-full">
-                  <div
-                    class="img-content overflow-hidden flex justify-center items-center [@media(min-width:900px)]:h-[300px] [@media(min-width:830px)]:h-[250px] [@media(min-width:768px)]:h-[220px] [@media(min-width:650px)]:h-[300px] [@media(min-width:600px)]:h-[260px]  [@media(min-width:500px)]:h-[220px]">
-                    <img src="./src/public/images/product-3.png" alt="" class="w-full h-fit max-h-full max-w-full ">
+              @foreach($products as $product)
+              <div class="product-item [@media(min-width:768px)]:w-[32%] [@media(min-width:768px)]:mb-5 [@media(max-width:768px)]:mb-3 [@media(min-width:500px)]:w-[49%] [@media(max-width:500px)]:w-full">
+                <a href="{{ route('product', $product->{'slug_' . app()->getLocale()}) }}" class="h-full border p-3 block w-full">
+                  <div class="img-content overflow-hidden flex justify-center items-center [@media(min-width:900px)]:h-[300px] [@media(min-width:830px)]:h-[250px] [@media(min-width:768px)]:h-[220px] [@media(min-width:650px)]:h-[300px] [@media(min-width:600px)]:h-[260px]  [@media(min-width:500px)]:h-[220px]">
+                    <img src="{{ asset($product->image) }}" alt="" class="w-full h-fit max-h-full max-w-full ">
                   </div>
                   <div class="text-content px-2 mt-2 auto">
                     <div class="title text-dimgray sm:text-[20px] max-sm:[18px] font-[600] mb-1 truncate">
-                      Lorem
-                      ipsumt
-                      Lorem
-                      ipsumt fd dfhdhfsxd
+                      {!! $product->{'title_' . app()->getLocale()} !!}
                     </div>
-                    <div class="price text-orange font-[600] sm:text-[20px] max-sm:text-[18px]">1 200 000 <span
-                        class="ml-1 sm:text-[16px] max-sm:text-[14px] text-dimgray font-[500]">сум</span></div>
+                    <div class="price text-orange font-[600] sm:text-[20px] max-sm:text-[18px]">{{ $product->{'price_' . app()->getLocale()} }} <span class="ml-1 sm:text-[16px] max-sm:text-[14px] text-dimgray font-[500]">сум</span></div>
                   </div>
                 </a>
               </div>
-
-              <!-- foreach end -->
+              @endforeach
             </div>
           </div>
         </div>
