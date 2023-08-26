@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Page;
+use App\Models\PageIn;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -12,9 +13,11 @@ class AboutController extends Controller
     {
 
         $pages = Page::all();
+        $pageins = PageIn::orderBy('created_at', 'DESC')->get();
 
         return view('front.about', compact(
-            'pages'
+            'pages',
+            'pageins'
         ));
     }
 }

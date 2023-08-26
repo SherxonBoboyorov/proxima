@@ -62,7 +62,7 @@ videoWrappper?.addEventListener("click", (e) => {
 
   setTimeout(() => {
     if (src !== undefined) {
-      const newChild = <video class="fancybox-video m-0 p-0 object-fill" src="${src}" controls=""></video>;
+      const newChild = `<video class="fancybox-video m-0 p-0 object-fill" src="${src}" controls=""></video>`;
       videoModal.innerHTML = newChild;
     }
   }, 100);

@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\IndexController;
+use App\Http\Controllers\Front\NewsController;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
 
@@ -63,6 +64,8 @@ Route::group(
     ], function(){ 
         Route::get('/', [IndexController::class, 'homepage'])->name('/');
         Route::get('about', [AboutController::class, 'about'])->name('about');
+        Route::get('news', [NewsController::class, 'list'])->name('news');
+        Route::get('news/{slug}', [NewsController::class, 'show'])->name('new');
     });
 
 

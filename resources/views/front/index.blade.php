@@ -99,25 +99,29 @@
             <div class="description text-dimgray  [@media(min-width:768px)]:max-h-[145px] [@media(min-width:576px)]:max-h-[110px] [@media(max-width:576px)]:max-h-[55px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
               {!! $efficiency->{'content_' . app()->getLocale()} !!}
             </div>
-            <hr class="bg-[#E0E0E0] sm:my-4 max-sm:my-2">
-              {!! $efficiency->{'statistic_content_' . app()->getLocale()} !!}
-
-            </div>
+             <hr class="bg-[#E0E0E0] sm:my-4 max-sm:my-2">
+             
+             <div class="flex justify-between flex-wrap">
+              <div class="left-text md:w-1/2 max-md:w-full pr-3 mb-1">
+                <div class="description text-dimgray  [@media(min-width:768px)]:max-h-[50px] [@media(min-width:576px)]:max-h-[42px] [@media(max-width:576px)]:max-h-[38px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
+                  {!! $efficiency->{'statistic_content_' . app()->getLocale()} !!}
+                </div>
+              </div>
           </div>
         </div>
+      </div>
         @endforeach
       </div>
-
+      
       <div class="project-wrapper mx-auto max-sm:h-[320px] sm:h-[390px] md:h-[490px] lg:h-[590px] w-full relative">
-        @foreach($projects as $project)
-        <img src="{{ asset($project->image) }}" alt="" class="w-full h-full object-cover">
+        <img src="{{ asset('front/src/public/images/project-img.png') }}" alt="" class="w-full h-full object-cover">
         <div class="wrapper-centered w-1/2 absolute top-0 left-0 h-full bg-[#ffffffe8] z-10">
         </div>
         <div class="wrapper-centered max-w-screen-xl px-5 w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2  h-full bg-[#ff000000] z-20">
           <div class="left-part w-1/2 h-full flex justify-start items-center">
             <div class="box p-5 pl-0 w-full -mt-2">
               <div class="icon md:w-[100px] md:h-[100px] sm:w-[80px] sm:h-[80px] max-sm:w-[60px] max-sm:h-[60px] ">
-                <img src="{{ asset($project->icon) }}" alt="" class="w-full h-full -ml-3">
+                <img src="{{ asset('front//src/public/icons/project-icon.png') }}" alt="" class="w-full h-full -ml-3">
               </div>
               <div class="title text-dimgray [@media(min-width:768px)]:text-[24px] [@media(min-width:576px)]:text-[20px] [@media(min-width:480px)]:text-[18px] [@media(max-width:480px)]:text-[16px] uppercase">
                 Наши проекты</div>
@@ -133,41 +137,32 @@
             </div>
           </div>
         </div>
-        @endforeach
       </div>
 
       <!-- remove 4th child -->
       <div class="news mx-auto max-w-screen-xl px-2 py-16">
         <div class="text-[30px] text-dimgray text-center uppercase">Новости</div>
         <div class="card-wrapper w-full flex justify-between flex-wrap mt-7">
-
-          <!-- foreach start -->
-          <div
-            class="card [@media(min-width:850px)]:w-1/3 [@media(min-width:500px)]:w-1/2 [@media(max-width:500px)]:w-full px-2 mb-4">
-            <a href="./news_in.html" class="card-content w-full block h-full border">
+          @foreach($news as $new)
+          <div class="card [@media(min-width:850px)]:w-1/3 [@media(min-width:500px)]:w-1/2 [@media(max-width:500px)]:w-full px-2 mb-4">
+            <a href="{{ route('new', $new->{'slug_' . app()->getLocale()}) }}" class="card-content w-full block h-full border">
               <div class="img-content w-full [@media(min-width:500px)]:h-[230px] [@media(max-width:500px)]:h-[200px]">
-                <img src="./src/public/images/news-img-1.png" alt="" class="w-full h-full object-cover">
+                <img src="{{ asset($new->image) }}" alt="" class="w-full h-full object-cover">
               </div>
               <div class="text-content p-4">
-                <div class="date text-orange text-[14px] max-sm:text-[12px]">10.08.2023</div>
-                <div
-                  class="title text-dimgray font-[600] my-1 [@media(min-width:768px)]:text-[20px] [@media(min-width:500px)]:text-[18px] [@media(max-width:500px)]:text-[16px] sm:max-h-[60px] max-sm:max-h-[54px] overflow-hidden">
-                  Lorem ipsum imet</div>
-                <div
-                  class="description text-dimgray sm:text-[16px] max-sm:text-[14px] sm:max-h-[100px] max-sm:max-h-[65px] overflow-hidden">
-                  Ut
-                  enim ad minima
-                  veniam, quis nostrum exercitationem
-                  ullam corporis suscipitionem
-                  ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</div>
+                <div class="date text-orange text-[14px] max-sm:text-[12px]">{{  date('d.m.Y', strtotime($new->created_at)) }}</div>
+                <div class="title text-dimgray font-[600] my-1 [@media(min-width:768px)]:text-[20px] [@media(min-width:500px)]:text-[18px] [@media(max-width:500px)]:text-[16px] sm:max-h-[60px] max-sm:max-h-[54px] overflow-hidden">
+                  {{ $new->{'title_' .app()->getLocale()} }}</div>
+                <div class="description text-dimgray sm:text-[16px] max-sm:text-[14px] sm:max-h-[100px] max-sm:max-h-[65px] overflow-hidden">
+                  {!! $new->{'content_' . app()->getLocale()} !!}
+                </div>
               </div>
             </a>
           </div>
-          <!-- foreach end -->
-
+          @endforeach
         </div>
         <div class="mx-auto mt-5 w-full flex justify-center items-center">
-          <a href="#" class="border border-orange py-3 px-4 text-orange text-[16px] uppercase">Все новости</a>
+          <a href="{{ route('news') }}" class="border border-orange py-3 px-4 text-orange text-[16px] uppercase">Все новости</a>
         </div>
       </div>
     </div>

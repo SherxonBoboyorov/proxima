@@ -18,17 +18,17 @@
     <div class="header absolute top-0 left-0 z-10 w-full  px-4">
       <div class="header-centered max-w-screen-xl mx-auto w-full py-4 flex justify-between items-center">
         <div id="navbar-toggler" class="navbar-toggler cursor-pointer [@media(min-width:1100px)]:hidden sm:w-[30px] sm:h-[30px]  max-sm:w-[20px] max-sm:h-[20px]">
-          <img src="./src/public/icons/menu.png" alt="" class="w-full h-full">
+          <img src="{{ asset('front/src/public/icons/menu.png') }}" alt="" class="w-full h-full">
         </div>
 
         <div class="logo">
-          <a href="{{ route('/') }}index.html">
+          <a href="{{ route('/') }}">
             <img src="{{ asset('front/src/public/icons/logo.png') }}" alt="" class="sm:w-[180px] max-sm:-mt-1 max-sm:w-[150px]" />
           </a>
         </div>
 
         <div class="link-content [@media(max-width:1100px)]:hidden flex text-white text-[16px] justify-between items-center max-w-[50%] w-full mx-5">
-          <a href="./about.html">О компании</a>
+          <a href="{{ route('about') }}">О компании</a>
           <a href="./project.html">Проекты</a>
           <a href="./products.html">Продукция</a>
           <a href="./questions.html">Вопросы</a>
@@ -79,7 +79,7 @@
         <div class="transition-all duration-[0.15s] left-side max-w-[400px] -translate-x-[100%]  h-full mr-[60px] bg-white px-10 py-5">
           <div class="links w-full">
             <div class="link">
-              <a href="./about.html" class="[@media(max-width:480px)]:text-[14px] [@media(min-width:480px)]:text-[18px] font-[500] text-orange">
+              <a href="{{ route('about') }}" class="[@media(max-width:480px)]:text-[14px] [@media(min-width:480px)]:text-[18px] font-[500] text-orange">
                 О компании </a>
             </div>
             <div class="link my-3">

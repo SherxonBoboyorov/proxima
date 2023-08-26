@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Article;
 use App\Models\Efficiency;
 use App\Models\Page;
 use App\Models\Project;
@@ -20,15 +21,16 @@ class IndexController extends Controller
         $videos = Video::all();
         $pages = Page::all();
         $efficiencies = Efficiency::all();
-
         $projects = Project::orderBy('created_at', 'DESC')->take(1)->get();
+        $news = Article::orderBy('created_at', 'DESC')->paginate(3);
         return view('front.index',  compact(
             'sliders',
             'promotionals',
             'videos',
             'pages',
             'efficiencies',
-            'projects'
+            'projects',
+            'news'
         ));
     }
 }
