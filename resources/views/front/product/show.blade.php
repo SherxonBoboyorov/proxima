@@ -41,9 +41,9 @@
                 <div class="left-side h-fit md:w-[45%] sm:w-[50%] max-sm:w-full bg-white">
                   <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                      @foreach($product->galleries as $gallery)
+                      @foreach($product->gallaries as $gallary)
                       <div class="swiper-slide h-fit max-h-[400px] flex justify-center items-center">
-                        <img src="{{ $gallery->image }}" class="w-fit h-fit max-w-full max-h-full" alt="{{ $product->name }}">
+                        <img src="{{ $gallary->image }}" class="w-fit h-fit max-w-full max-h-full" alt="{{ $product->name }}">
                       </div>
                       @endforeach
                     </div>

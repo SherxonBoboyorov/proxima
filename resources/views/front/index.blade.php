@@ -11,7 +11,7 @@
           <div class="description max-lg:text-[16px] lg:text-[20px] my-2 mb-10 text-white max-md:w-full md:w-[60%]">
                 {{ $slider->{'description_' . app()->getLocale()} }}
           </div>
-          <a href="{{ $slider->link }}" class="border border-orange py-3 px-4 text-white text-[16px] uppercase">Подробнее</a>
+          <a href="{{ $slider->link }}" class="border border-orange py-3 px-4 text-white text-[16px] uppercase">@lang('main.koproq')</a>
         </div>
       </div>
       @endforeach
@@ -48,7 +48,7 @@
             Смотреть видео
           </div>
         </div>
-        <a data-fancybox href="{{ $video->video }}" class="w-full h-full">
+        <a data-fancybox href="{{ $video->video }}" class="w-full h-full video-href">
           <img id="videoImg" class="w-full h-full object-cover" src="{{ asset($video->image) }}" />
         </a>
         @endforeach

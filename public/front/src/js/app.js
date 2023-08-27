@@ -54,28 +54,17 @@ document.body.addEventListener("click", (e) => {
   }
 });
 
-
-videoWrappper?.addEventListener("click", (e) => {
-  videoWrappper.querySelector("#videoImg").click();
-  const videoModal = document.querySelector(".fancybox-content");
-  const src = videoModal?.querySelector("video source")?.src?.trim();
-
-  setTimeout(() => {
-    if (src !== undefined) {
-      const newChild = `<video class="fancybox-video m-0 p-0 object-fill" src="${src}" controls=""></video>`;
-      videoModal.innerHTML = newChild;
-    }
-  }, 100);
-});
-
 let togglePlayVideo = false;
 videoWrappper?.addEventListener("click", (e) => {
   videoWrappper.querySelector("#videoImg").click();
+  const videoModal = document.querySelector(".fancybox-content");
+  const src = videoWrappper?.querySelector(".video-href")?.href.trim()
+
   setTimeout(() => {
-    const videoModal = document.querySelector(".fancybox-content");
-    const newChild =
-      '<video class="fancybox-video m-0 p-0 object-fill" src="./src/public/videos/test-video.MOV" controls=""></video>';
-    videoModal.innerHTML = newChild;
+    if (src) {
+      const newChild = `<video class="fancybox-video m-0 p-0 object-fill" src="${src}" controls></video>`;
+      videoModal.innerHTML = newChild;
+    }
   }, 100);
 });
 
