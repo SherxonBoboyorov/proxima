@@ -28,7 +28,9 @@ return [
      'lavozim' => 'Должность',
      'barcha_huquqlar_himoyalangan' => 'Все права защищены',
      'yuborish' => 'Отправить',
-     'arizangizni_yuboring' => 'Оставить заявку'
+     'arizangizni_yuboring' => 'Оставить заявку',
+     'toliq_ism' => 'ФИО',
+     'qidirmoq' => 'Qidirmoq'
 
 ];
 

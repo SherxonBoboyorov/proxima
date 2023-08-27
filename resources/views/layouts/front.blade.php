@@ -68,7 +68,7 @@
 
             <div id="searchContent" class="search-content hidden w-[260px] h-[45px] border border-white bg-transparent absolute top-[40px] right-0">
               <form action="" class="w-full h-full p-0 m-0 flex ">
-                <input type="text" class="border-none bg-transparent placeholder:text-white text-[18px] outline-none w-full h-full px-3 py-2 text-white" placeholder="Search...">
+                <input type="text" class="border-none bg-transparent placeholder:text-white text-[18px] outline-none w-full h-full px-3 py-2 text-white" placeholder="@lang('main.qidirmoq')...">
                 <button type="submit" class="p-2 border-l"> <svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full" viewBox="0 0 28 28" fill="none">
                     <path d="M21 12.25C21 17.0824 17.0824 21 12.25 21C7.4175 21 3.5 17.0824 3.5 12.25C3.5 7.4175 7.4175 3.5 12.25 3.5C17.0824 3.5 21 7.4175 21 12.25Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M23.3336 23.3334L18.4375 18.4373" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -112,6 +112,8 @@
     </div>
     <!-- header end -->
 
+    @include('alert')
+
         <!-- submit application start -->
         <div id="submit-application" class="hidden backdrop px-5 fixed z-50 justify-stretch items-start top-0 left-0 w-full h-full bg-[rgb(0,0,0,0.60)]">
           <div class="transition-all duration-[0.2s] ease-linear max-w-[500px] w-full bg-white h-fit mx-auto p-3 mt-32">
@@ -134,14 +136,14 @@
     
             <!-- Form Content start -->
             <div class="form-content mx-auto px-2 ">
-              <form action="" method="get" class="my-3">
+              <form action="{{ route('yourSave') }}" method="POST" class="my-3">
+                @csrf
                 <div class="input-content">
-                  <input required type="text" class="w-full [@media(min-width:576px)]:h-[50px] [@media(max-width:576px)]:h-[45px] px-3 my-2 [@media(min-width:576px)]:text-[18px] [@media(max-width:576px)]:text-[16px] text-dimgray outline-none border" placeholder="ФИО" />
-                  <input required type="number" class="w-full [@media(min-width:576px)]:h-[50px] [@media(max-width:576px)]:h-[45px] px-3 my-2 [@media(min-width:576px)]:text-[18px] [@media(max-width:576px)]:text-[16px] text-dimgray outline-none border" placeholder="Телефонный номер" />
+                  <input required type="text" name="name" class="w-full [@media(min-width:576px)]:h-[50px] [@media(max-width:576px)]:h-[45px] px-3 my-2 [@media(min-width:576px)]:text-[18px] [@media(max-width:576px)]:text-[16px] text-dimgray outline-none border" placeholder="@lang('main.toliq_ism')" />
+                  <input required type="text" name="phone" class="w-full [@media(min-width:576px)]:h-[50px] [@media(max-width:576px)]:h-[45px] px-3 my-2 [@media(min-width:576px)]:text-[18px] [@media(max-width:576px)]:text-[16px] text-dimgray outline-none border" placeholder="@lang('main.telefon_raqami')" />
                 </div>
                 <div class="button-content my-3 w-full flex justify-center items-center">
-                  <button type="submit"
-                    class="border-none uppercase w-full [@media(min-width:576px)]:py-3 [@media(min-width:576px)]:px-6 [@media(max-width:576px)]:py-2 [@media(max-width:576px)]:px-5 [@media(min-width:576px)]:text-[18px] [@media(max-width:576px)]:text-[16px] text-[white] bg-orange">
+                  <button type="submit" class="border-none uppercase w-full [@media(min-width:576px)]:py-3 [@media(min-width:576px)]:px-6 [@media(max-width:576px)]:py-2 [@media(max-width:576px)]:px-5 [@media(min-width:576px)]:text-[18px] [@media(max-width:576px)]:text-[16px] text-[white] bg-orange">
                     @lang('main.yuborish')
                   </button>
                 </div>

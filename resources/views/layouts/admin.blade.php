@@ -191,6 +191,18 @@
                         </li>
                         {{-- end  --}}
 
+
+                         {{-- start  --}}
+                         <li class="nav-item">
+                            <a href="{{ route('feedback.index') }}" class="nav-link">
+                            <i class="nav-icon fa fa-list-alt"></i>
+                            <p>
+                                Список опросников
+                            </p>
+                            </a>
+                        </li>
+                        {{-- end  --}}
+
                 </ul>
             </nav>
         </div>

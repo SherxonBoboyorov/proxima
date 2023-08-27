@@ -41,11 +41,14 @@
               <a href="{{ route('news') }}">@lang('main.yangiliklar')</a>
             </div>
 
-            <div class="years flex justify-start items-center my-4 overflow-auto">
-              <a href="#" class="mr-3 text-dimgray active-year [&.active-year]:text-orange text-[16px]">2023</a>
-              <a href="#" class="mr-3 text-dimgray [&.active-year]:text-orange text-[16px]">2022</a>
+             <div id="filterForm" class="years flex justify-start items-center my-4 overflow-auto">
+              @csrf
+              @foreach($values as $item)
+                 <a href="{{ route('news', ["year" => $item]) }}" class="mr-3 text-dimgray [&.active-year]:text-orange text-[16px]" name="year">{{ $item }}</a>
+              @endforeach
             </div>
 
+          <div id="result_section">
             <div class="body mt-2 h-fit">
               <div class="card-wrapper w-full mt-7">
                 @foreach($news as $new)
@@ -74,8 +77,13 @@
 
             </div>
           </div>
+          </div>
         </div>
       </div>
     </div>
 
  @endsection
+ {{-- @section('pageScripts')
+    <!-- flot charts scripts-->
+    <script src="{{ asset('front/js/filter.js') }}"></script>
+@endsection --}}

@@ -29,7 +29,9 @@ return [
     'lavozim' => 'Lavozim',
     'barcha_huquqlar_himoyalangan' => 'Barcha huquqlar himoyalangan',
     'yuborish' => 'Yuborish',
-    'arizangizni_yuboring' => 'Arizangizni yuboring'
+    'arizangizni_yuboring' => 'Arizangizni yuboring',
+    'toliq_ism' => 'To\'liq ism',
+    'qidirmoq' => 'Поиск'
     
 
 ];

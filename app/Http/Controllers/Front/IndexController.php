@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\Callback;
 use App\Models\Efficiency;
 use App\Models\Options;
 use App\Models\Page;
@@ -12,6 +13,7 @@ use App\Models\Promotional;
 use App\Models\Slider;
 use App\Models\Video;
 use Butschster\Head\Facades\Meta;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -39,5 +41,21 @@ class IndexController extends Controller
             'projects',
             'news'
         ));
+    }
+
+
+             /**
+     * @throws ValidationException
+     */
+    public function yourSave(Request $request): RedirectResponse
+    {
+        $data =  $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+       ]);
+       Callback::create($data);
+
+        return back()->with('message', 'unable to sending');
+
     }
 }

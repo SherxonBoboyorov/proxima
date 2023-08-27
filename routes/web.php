@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\ProductImageUploadController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\PromotionalController;
 use App\Http\Controllers\Admin\QuestionController;
+use App\Http\Controllers\Admin\ResultController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Front\AboutController;
@@ -49,7 +50,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'project' => ProjectController::class,
         'question' => QuestionController::class,
         'product' => ProductController::class,
-        'office' => OfficeController::class
+        'office' => OfficeController::class,
+        'feedback' => ResultController::class
     ]);
     
     Route::post('file-uploadproject', [FileUploadController::class, 'upload'])->name('file_uploadproject');
@@ -69,12 +71,14 @@ Route::group(
         Route::get('/', [IndexController::class, 'homepage'])->name('/');
         Route::get('about', [AboutController::class, 'about'])->name('about');
         Route::get('news', [NewsController::class, 'list'])->name('news');
+        Route::post('news/ajax-filter', [NewsController::class, 'ajaxFilterList'])->name('news.ajaxFilter');
         Route::get('news/{slug}', [NewsController::class, 'show'])->name('new');
         Route::get('contact', [ContactController::class, 'contact'])->name('contact');
         Route::get('team', [LeaderController::class, 'team'])->name('team');
         Route::get('products', [ProductsController::class, 'list'])->name('products');
         Route::get('products/{slug}', [ProductsController::class, 'show'])->name('product');
         Route::get('question', [QuestionsController::class, 'question'])->name('question');
+        Route::post('save_yourSave', [IndexController::class, 'yourSave'])->name('yourSave');
 
     });
 
