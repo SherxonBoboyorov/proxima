@@ -28,7 +28,7 @@
                 <path d="M8 1L0.999999 8L8 15" stroke="#FC7E1F" stroke-width="2" stroke-linecap="round"
                   stroke-linejoin="round" />
               </svg>
-              <span class="ml-3 text-dimgray sm:text-[16px] max-sm:text-[14px] uppercase">Назад</span>
+              <span class="ml-3 text-dimgray sm:text-[16px] max-sm:text-[14px] uppercase">@lang('main.orqaga')</span>
             </a>
           </div>
 

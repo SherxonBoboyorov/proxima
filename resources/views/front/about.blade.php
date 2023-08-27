@@ -7,7 +7,7 @@
 
         <div class="text-content max-w-screen-xl mx-auto w-full">
           <div class="title mt-10 max-md:w-full font-[400] md:w-[60%] max-lg:text-[25px] lg:text-[30px] uppercase text-[white]">
-            О компании</div>
+            @lang('main.kompaniya_haqida')</div>
         </div>
       </div>
       <div class="w-full mx-auto px-3">
@@ -15,36 +15,36 @@
           <div class="link-content lg:w-[15%] max-lg:w-max px-3">
             <div class="mb-3 text-dimgray before:text-orange active-link [&.active-link]:before:content-['_-'] [&.active-link]:text-orange [&.active-link]:before:-ml-[9px]">
               <a href="{{ route('about') }}" class="text-[18px] text-inherit hover:text-orange uppercase transition-all duration-150 ease-linear">
-                О компании
+                @lang('main.kompaniya_haqida')
               </a>
             </div>
             <div class="mb-3 text-dimgray before:text-orange [&.active-link]:before:content-['_-'] [&.active-link]:text-orange [&.active-link]:before:-ml-2.5">
               <a href="{{ route('news') }}" class="text-[18px] text-inherit hover:text-orange uppercase transition-all duration-150 ease-linear">
-                новости
+                @lang('main.yangiliklar')
               </a>
             </div>
             <div
               class="mb-3 text-dimgray before:text-orange [&.active-link]:before:content-['_-'] [&.active-link]:text-orange [&.active-link]:before:-ml-2.5">
               <a href="{{ route('team') }}" class="text-[18px] text-inherit hover:text-orange uppercase transition-all duration-150 ease-linear">
-                команда
+                @lang('main.jamoa')
               </a>
             </div>
             <div class="mb-3 text-dimgray before:text-orange [&.active-link]:before:content-['_-'] [&.active-link]:text-orange [&.active-link]:before:-ml-2.5">
               <a href="{{ route('contact') }}" class="text-[18px] text-inherit hover:text-orange uppercase transition-all duration-150 ease-linear">
-                контакты
+                @lang('main.kontaktlar')
               </a>
             </div>
           </div>
           <div class="body-content lg:w-[80%] max-lg:w-full px-1">
             <div class="breadcrumb text-[#A4A4A4] text-[16px] flex items-center">
-              <a href="{{ route('/') }}">Главная </a>
+              <a href="{{ route('/') }}">@lang('main.bosh_safiha') </a>
               <span class="mx-2">\</span>
-              <a href="{{ route('about') }}">О компании</a>
+              <a href="{{ route('about') }}">@lang('main.kompaniya_haqida')</a>
             </div>
 
             <div class="body mt-2 h-fit">
               <div class="title max-md:w-full md:w-[60%] max-lg:text-[25px] lg:text-[30px] uppercase text-dimgray">
-                О компании</div>
+                @lang('main.kompaniya_haqida')</div>
 
               <div class="text-content text-dimgray sm:text-[18px] max-sm:text-[16px] mt-1">
                 

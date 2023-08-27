@@ -28,20 +28,22 @@
         </div>
 
         <div class="link-content [@media(max-width:1100px)]:hidden flex text-white text-[16px] justify-between items-center max-w-[50%] w-full mx-5">
-          <a href="{{ route('about') }}">О компании</a>
-          <a href="./project.html">Проекты</a>
-          <a href="{{ route('products') }}">Продукция</a>
-          <a href="./questions.html">Вопросы</a>
+          <a href="{{ route('about') }}">@lang('main.kompaniya_haqida')</a>
+          <a href="./project.html">@lang('main.loyihalar') </a>
+          <a href="{{ route('products') }}">@lang('main.mahsulotlar') </a>
+          <a href="{{ route('question') }}">@lang('main.savollar')</a>
         </div>
 
         <div class="search-content  flex justify-between items-center">
           <button onclick="submitApplicationModalOpen()" class="px-3 py-2 [@media(max-width:1100px)]:hidden text-center w-max border bg-transparent text-[14px] text-[white] uppercase">
-            Оставить заявку
+            @lang('main.arizangizni_yuboring')
           </button>
 
           <div id="dropdownBtn" class="languages-dropdown sm:mx-5 max-sm:mr-2 max-sm:ml-0 relative">
+            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+             @if($localeCode != app()->getLocale())
             <div id="lang-head" class="head text-white text-[16px] cursor-pointer flex items-center">
-              <span class="current-language">Uz</span>
+              <span class="current-language">{{ strtoupper(app()->getLocale()) }}</span>
               <span class="mx-1 mt-[2px]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 12 7" fill="none">
                   <path d="M11 1L6 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -49,11 +51,14 @@
               </span>
             </div>
             <div id="dropdownContent" class="body hidden absolute p-2 top-[32px] border w-[40px] h-fit bg-transparent right-0">
-              <a href="#" id="en" class="text-white text-[16px]">Uz</a>
-              <br/>
-              <a href="#" id="ru" class="text-white text-[16px]">Ru</a>
+              <a rel="alternate" class="text-white text-[16px]" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                 {{ strtoupper($localeCode) }}
+               </a>
             </div>
+            @endif
+            @endforeach
           </div>
+
 
           <div id="searchBtn" class="search cursor-pointer sm:w-[30px] sm:h-[30px] relative max-sm:w-[25px] max-sm:h-[25px]">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full" viewBox="0 0 28 28" fill="none">
@@ -80,23 +85,23 @@
           <div class="links w-full">
             <div class="link">
               <a href="{{ route('about') }}" class="[@media(max-width:480px)]:text-[14px] [@media(min-width:480px)]:text-[18px] font-[500] text-orange">
-                О компании </a>
+                @lang('main.kompaniya_haqida') </a>
             </div>
             <div class="link my-3">
               <a href="./project.html" class="[@media(max-width:480px)]:text-[14px] [@media(min-width:480px)]:text-[18px] font-[500] text-orange">
-                Проекты </a>
+                @lang('main.loyihalar')</a>
             </div>
             <div class="link my-3">
               <a href="{{ route('products') }}" class="[@media(max-width:480px)]:text-[14px] [@media(min-width:480px)]:text-[18px] font-[500] text-orange">
-                Продукция </a>
+                @lang('main.mahsulotlar') </a>
             </div>
             <div class="link">
-              <a href="./questions.html" class="[@media(max-width:480px)]:text-[14px] [@media(min-width:480px)]:text-[18px] font-[500] text-orange">
-                Вопросы </a>
+              <a href="{{ route('question') }}" class="[@media(max-width:480px)]:text-[14px] [@media(min-width:480px)]:text-[18px] font-[500] text-orange">
+                @lang('main.savollar') </a>
             </div>
             <div class="link mt-4">
               <button onclick="submitApplicationModalOpen()" class=" px-3 py-2 text-center w-max border border-orange text-orange bg-transparent [@media(max-width:480px)]:text-[14px] [@media(min-width:480px)]:text-[18px] uppercase">
-                Оставить заявку
+                @lang('main.arizangizni_yuboring')
               </button>
             </div>
           </div>
@@ -121,7 +126,7 @@
             <div class="text-content pl-3 pr-4 mx-auto max-w-[1000px] overflow-hidden">
               <!-- Title start -->
               <div class="title text-dimgray mt-5 [@media(min-width:576px)]:text-[36px] [@media(max-width:576px)]:text-[30px] font-[300]">
-                Оставить заявку
+                @lang('main.arizangizni_yuboring')
               </div>
               <!-- Title end -->
             </div>
@@ -137,7 +142,7 @@
                 <div class="button-content my-3 w-full flex justify-center items-center">
                   <button type="submit"
                     class="border-none uppercase w-full [@media(min-width:576px)]:py-3 [@media(min-width:576px)]:px-6 [@media(max-width:576px)]:py-2 [@media(max-width:576px)]:px-5 [@media(min-width:576px)]:text-[18px] [@media(max-width:576px)]:text-[16px] text-[white] bg-orange">
-                    Отправить
+                    @lang('main.yuborish')
                   </button>
                 </div>
               </form>
@@ -191,36 +196,36 @@
           </div>
           <div class="link-footer [@media(min-width:786px)]:w-[30%] [@media(min-width:450px)]:w-1/2 [@media(max-width:450px)]:w-full mb-5">
             <div class="mb-3">
-              <a href="{{ route('about') }}" class="hover:text-white text-[#9E9E9E] text-[16px] transition-all duration-100 mb-10 ease-linear uppercase">О
-                компании</a>
+              <a href="{{ route('about') }}" class="hover:text-white text-[#9E9E9E] text-[16px] transition-all duration-100 mb-10 ease-linear uppercase">
+                @lang('main.kompaniya_haqida')</a>
             </div>
             <div class="mb-3">
-              <a href="./project.html" class="hover:text-white text-[#9E9E9E] text-[16px] transition-all duration-100 mb-10 ease-linear uppercase">Проекты</a>
+              <a href="./project.html" class="hover:text-white text-[#9E9E9E] text-[16px] transition-all duration-100 mb-10 ease-linear uppercase">@lang('main.loyihalar')</a>
             </div>
             <div class="mb-3">
-              <a href="{{ route('products') }}" class="hover:text-white text-[#9E9E9E] text-[16px] transition-all duration-100 mb-10 ease-linear uppercase">Продукция</a>
+              <a href="{{ route('products') }}" class="hover:text-white text-[#9E9E9E] text-[16px] transition-all duration-100 mb-10 ease-linear uppercase">@lang('main.mahsulotlar')</a>
             </div>
             <div class="mb-3">
-              <a href="./questions.html" class="hover:text-white text-[#9E9E9E] text-[16px] transition-all duration-100 mb-10 ease-linear uppercase">Вопросы</a>
+              <a href="{{ route('question') }}" class="hover:text-white text-[#9E9E9E] text-[16px] transition-all duration-100 mb-10 ease-linear uppercase">@lang('main.savollar')</a>
             </div>
           </div>
           <div class="address-footer [@media(min-width:786px)]:w-2/5 [@media(max-width:768px)]:w-full">
             <div class="mb-3">
               <a
                 class="text-white flex text-[14px]">
-                <div class="mr-3 font-[600]">Адрес:</div>
+                <div class="mr-3 font-[600]">@lang('main.manzil'):</div>
                 <div>{{ $options->where('key', 'address_' . app()->getLocale())->first()->value }}</div>
               </a>
             </div>
             <div class="mb-3">
               <a href="tel:{{ $options->where('key', 'phone')->first()->value }}" class="text-white flex text-[14px]">
-                <div class="mr-3 font-[600]">Телефонный номер:</div>
+                <div class="mr-3 font-[600]">@lang('main.telefon_raqami'):</div>
                 <div>{{ $options->where('key', 'phone')->first()->value }}</div>
               </a>
             </div>
             <div class="mb-3">
               <a href="mailto:{{ $options->where('key', 'email')->first()->value }}" class="text-white flex text-[14px]">
-                <div class="mr-3 font-[600]">Электронная почта:</div>
+                <div class="mr-3 font-[600]">@lang('main.email'):</div>
                 <div>{{ $options->where('key', 'email')->first()->value }}</div>
               </a>
             </div>
@@ -229,10 +234,10 @@
         <div class="bottom-footer py-5 bg-[#161616] w-full mx-auto px-3">
           <div class="text-content max-w-screen-xl mx-auto flex justify-between items-center flex-wrap">
             <a class="text-[#9E9E9E] text-[16px] sm:w-1/2 max-sm:w-full text-left max-sm:text-center my-1">
-              “Proxima” Все права защищены
+              “Proxima” @lang('main.barcha_huquqlar_himoyalangan')
             </a>
             <a href="https://sos.uz/" class="text-[#9E9E9E] text-[16px] sm:w-1/2 max-sm:w-full text-right max-sm:text-center my-1">
-              © Copyright 2023 - SOS Group
+              © Copyright {{ date("Y") }} - SOS Group
             </a>
           </div>
         </div>

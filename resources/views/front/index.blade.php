@@ -3,7 +3,6 @@
 @section('content')
 
     <div class="main mb-52 h-fit">
-      
       @foreach($sliders as $slider)
       <div class="back-img px-4 max-lg:h-[550px] lg:h-[700px] mx-auto w-full bg-no-repeat bg-center flex items-center bg-cover  justify-center" style="background-image: url({{ asset($slider->image) }});">
         <div class="text-content max-w-screen-xl mx-auto w-full">
@@ -45,7 +44,7 @@
             </svg>
           </div>
           <div class="title sm:text-[30px] max-sm:text-[18px] mt-2 font-[100] text-center text-white uppercase">
-            Смотреть видео
+            @lang('main.videoni_tomosha_qiling')
           </div>
         </div>
         <a data-fancybox href="{{ $video->video }}" class="w-full h-full video-href">
@@ -67,13 +66,13 @@
                 <img src="{{ asset('front/src/public/icons/facade-icon.png') }}" alt="" class="w-full h-full -ml-3">
               </div>
               <div class="title text-dimgray [@media(min-width:768px)]:text-[24px] [@media(min-width:576px)]:text-[20px] [@media(min-width:480px)]:text-[18px] [@media(max-width:480px)]:text-[16px] uppercase">
-                O Компания</div>
+                @lang('main.kompaniya_haqida')</div>
               <hr class="w-[30px] bg-orange border-none h-[2px] md:my-3 max-md:my-1">
               <div class="description text-dimgray  [@media(min-width:768px)]:max-h-[145px] [@media(min-width:576px)]:max-h-[110px] [@media(max-width:576px)]:max-h-[55px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
                {{ $page->{'sub_content_' . app()->getLocale()} }}
               </div>
               <div class="sm:mt-4 max-sm:mt-2">
-                <a href="{{ route('about') }}" class="border border-orange  py-2 px-3 text-orange uppercase [@media(min-width:768px)]:text-[14px] [@media(min-width:576px)]:text-[12px] [@media(max-width:576px)]:text-[10px]">Подробнее</a>
+                <a href="{{ route('about') }}" class="border border-orange  py-2 px-3 text-orange uppercase [@media(min-width:768px)]:text-[14px] [@media(min-width:576px)]:text-[12px] [@media(max-width:576px)]:text-[10px]">@lang('main.koproq')</a>
               </div>
             </div>
           </div>
@@ -124,14 +123,14 @@
                 <img src="{{ asset('front//src/public/icons/project-icon.png') }}" alt="" class="w-full h-full -ml-3">
               </div>
               <div class="title text-dimgray [@media(min-width:768px)]:text-[24px] [@media(min-width:576px)]:text-[20px] [@media(min-width:480px)]:text-[18px] [@media(max-width:480px)]:text-[16px] uppercase">
-                Наши проекты</div>
+                @lang('main.bizning_loyihalarimiz')</div>
               <hr class="w-[30px] bg-orange border-none h-[2px] md:my-3 max-md:my-1">
               <div class="description text-dimgray  [@media(min-width:768px)]:max-h-[145px] [@media(min-width:576px)]:max-h-[110px] [@media(max-width:576px)]:max-h-[55px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui
               </div>
               <div class="sm:mt-4 max-sm:mt-2">
-                <a href="#" class="border border-orange  py-2 px-3 text-orange uppercase [@media(min-width:768px)]:text-[14px] [@media(min-width:576px)]:text-[12px] [@media(max-width:576px)]:text-[10px]">Подробнее</a>
+                <a href="#" class="border border-orange  py-2 px-3 text-orange uppercase [@media(min-width:768px)]:text-[14px] [@media(min-width:576px)]:text-[12px] [@media(max-width:576px)]:text-[10px]">@lang('main.koproq')</a>
               </div>
 
             </div>
@@ -141,7 +140,7 @@
 
       <!-- remove 4th child -->
       <div class="news mx-auto max-w-screen-xl px-2 py-16">
-        <div class="text-[30px] text-dimgray text-center uppercase">Новости</div>
+        <div class="text-[30px] text-dimgray text-center uppercase">@lang('main.yangiliklar')</div>
         <div class="card-wrapper w-full flex justify-between flex-wrap mt-7">
           @foreach($news as $new)
           <div class="card [@media(min-width:850px)]:w-1/3 [@media(min-width:500px)]:w-1/2 [@media(max-width:500px)]:w-full px-2 mb-4">
@@ -162,7 +161,7 @@
           @endforeach
         </div>
         <div class="mx-auto mt-5 w-full flex justify-center items-center">
-          <a href="{{ route('news') }}" class="border border-orange py-3 px-4 text-orange text-[16px] uppercase">Все новости</a>
+          <a href="{{ route('news') }}" class="border border-orange py-3 px-4 text-orange text-[16px] uppercase">@lang('main.barcha_yangiliklar')</a>
         </div>
       </div>
     </div>

@@ -23,7 +23,14 @@ return [
     'manzil' => 'Manzil',
     'telefon_raqami' => 'Telefon raqami',
     'email' => 'Email',
-    'som' => 'so\'m'
+    'som' => 'so\'m',
+    'toshkent_shahridagi_ofis' => 'Toshkent shahridagi ofis',
+    'bizning_loyihalarimiz' => 'Bizning loyihalarimiz',
+    'lavozim' => 'Lavozim',
+    'barcha_huquqlar_himoyalangan' => 'Barcha huquqlar himoyalangan',
+    'yuborish' => 'Yuborish',
+    'arizangizni_yuboring' => 'Arizangizni yuboring'
+    
 
 ];
 

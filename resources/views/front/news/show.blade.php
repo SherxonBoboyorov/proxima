@@ -7,7 +7,7 @@
 
         <div class="text-content max-w-screen-xl mx-auto w-full">
           <div class="title mt-10 max-md:w-full font-[400] md:w-[60%] max-lg:text-[25px] lg:text-[30px] uppercase text-[white]">
-            Новости</div>
+            @lang('main.yangiliklar')</div>
         </div>
       </div>
       <div class="w-full mx-auto px-3">
@@ -15,36 +15,36 @@
           <div class="link-content lg:w-[15%] max-lg:w-max px-3">
             <div class="mb-3 text-dimgray before:text-orange [&.active-link]:before:content-['_-'] [&.active-link]:text-orange [&.active-link]:before:-ml-[9px]">
               <a href="{{ route('about') }}" class="text-[18px] text-inherit hover:text-orange uppercase transition-all duration-150 ease-linear">
-                О компании
+                @lang('main.kompaniya_haqida')
               </a>
             </div>
             <div
               class="mb-3 active-link text-dimgray before:text-orange [&.active-link]:before:content-['_-'] [&.active-link]:text-orange [&.active-link]:before:-ml-2.5">
               <a href="{{ route('news') }}"
                 class="text-[18px] text-inherit hover:text-orange uppercase transition-all duration-150 ease-linear">
-                новости
+                @lang('main.yangiliklar')
               </a>
             </div>
             <div
               class="mb-3 text-dimgray before:text-orange [&.active-link]:before:content-['_-'] [&.active-link]:text-orange [&.active-link]:before:-ml-2.5">
               <a href="{{ route('team') }}"
                 class="text-[18px] text-inherit hover:text-orange uppercase transition-all duration-150 ease-linear">
-                команда
+                @lang('main.jamoa')
               </a>
             </div>
             <div
               class="mb-3 text-dimgray before:text-orange [&.active-link]:before:content-['_-'] [&.active-link]:text-orange [&.active-link]:before:-ml-2.5">
               <a href="{{ route('contact') }}"
                 class="text-[18px] text-inherit hover:text-orange uppercase transition-all duration-150 ease-linear">
-                контакты
+                @lang('main.kontaktlar')
               </a>
             </div>
           </div>
           <div class="body-content lg:w-[80%] max-lg:w-full overflow-hidden px-1">
             <div class="breadcrumb text-[#A4A4A4] text-[16px] flex items-center">
-              <a href="{{ route('/') }}">Главная </a>
+              <a href="{{ route('/') }}">@lang('main.bosh_safiha') </a>
               <span class="mx-2">\</span>
-              <a href="{{ route('news') }}">Новости</a>
+              <a href="{{ route('news') }}">@lang('main.yangiliklar')</a>
             </div>
 
             <div class="btns flex w-full justify-between items-center sm:mt-2 max-sm:mt-4 flex-wrap">
@@ -54,7 +54,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">
                     <path d="M8 1L0.999999 8L8 15" stroke="#FC7E1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-                  <span class="ml-3 text-dimgray sm:text-[16px] max-sm:text-[14px] uppercase">Все новости</span>
+                  <span class="ml-3 text-dimgray sm:text-[16px] max-sm:text-[14px] uppercase">@lang('main.barcha_yangiliklar')</span>
                 </a>
               </div>
               <div class="other-btns md:w-fit flex justify-between items-center max-md:w-full max-md:-translate-y-6">
