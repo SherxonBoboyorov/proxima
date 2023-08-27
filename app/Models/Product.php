@@ -19,8 +19,6 @@ class Product extends Model
         'title_uz',
         'slug_ru',
         'slug_uz',
-        'slug_ru', 
-        'slug_uz',
         'price_ru',
         'price_uz',
         'sub_content_ru',

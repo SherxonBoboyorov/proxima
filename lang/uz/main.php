@@ -22,7 +22,9 @@ return [
     'texnik_xususiyatlari' => 'Texnik xususiyatlari',
     'manzil' => 'Manzil',
     'telefon_raqami' => 'Telefon raqami',
-    'email' => 'Email'
+    'email' => 'Email',
+    'som' => 'so\'m'
+
 ];
 
 ?>

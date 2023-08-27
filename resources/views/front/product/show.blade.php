@@ -4,14 +4,11 @@
 
 
     <div class="main mb-20 h-fit">
-      <div
-        class="back-img px-4 h-[200px] mx-auto w-full bg-no-repeat bg-center flex items-center bg-cover  justify-center"
-        style="background-image: url('{{ asset('front/src/public/images/back-img.jpg') }}');">
+      <div class="back-img px-4 h-[200px] mx-auto w-full bg-no-repeat bg-center flex items-center bg-cover  justify-center" style="background-image: url('{{ asset('front/src/public/images/back-img.jpg') }}');">
 
         <div class="text-content max-w-screen-xl mx-auto w-full">
-          <div
-            class="title mt-10 max-md:w-full font-[400] md:w-[60%] max-lg:text-[25px] lg:text-[30px] uppercase text-[white]">
-            Продукция
+          <div class="title mt-10 max-md:w-full font-[400] md:w-[60%] max-lg:text-[25px] lg:text-[30px] uppercase text-[white]">
+            @lang('main.mahsulotlar')
           </div>
         </div>
       </div>
@@ -19,9 +16,9 @@
         <div class="div max-w-screen-xl mx-auto lg:my-10 max-lg:mt-0 pt-10">
 
           <div class="breadcrumb text-[#A4A4A4] sm:text-[16px] max-sm:text-[14px] flex items-start">
-            <a href="{{ route('/') }}">Главная </a>
+            <a href="{{ route('/') }}">@lang('main.bosh_safiha')</a>
             <span class="mx-2">\</span>
-            <a href="{{ route('products') }}">Продукция</a>
+            <a href="{{ route('products') }}">@lang('main.mahsulotlar')</a>
             <span class="mx-2">\</span>
             <a class="truncate">{{ $product->{'title_' . app()->getLocale()} }}</a>
           </div>
@@ -56,27 +53,26 @@
                 <div class="right-side md:w-[55%] h-full sm:w-[50%] max-sm:w-full px-5">
                   <div class="title md:text-[25px] max-md:text-[22px] text-dimgray">{{ $product->{'title_' . app()->getLocale()} }} </div>
                   <div class="description mt-3 md:text-[17px] max-md:text-[15px] text-dimgray overflow-hidden md:max-h-[80px] max-md:max-h-[50px]">
-                    {!! $product->{'content_' . app()->getLocale()} !!}
+                    {!! $product->{'sub_content_' . app()->getLocale()} !!}
                   </div>
 
                   <div class="product-info-table-content  mt-5">
-                    <!-- foreach start -->
-
+                    @foreach($product->characters as $character)
                     <div class="item flex justify-between text-dimgray py-3 border-b">
                       <div class="key w-fit md-text-[15px] max-md:text-[13px] ">
-                        Номинальная
+                        {{ $character->key }}
                       </div>
                       <div class="value font-[600] md:text-[17px] max-md:text-[15px] w-fit">
-                        445 Вт
+                        {{ $character->value }}
                       </div>
                     </div>
-
-                    <!-- foreach end -->
+                    @endforeach
                   </div>
 
                   <div class="price text-orange font-[600] sm:text-[20px] max-sm:text-[18px]">
                     {{ $product->{'price_' . app()->getLocale()} }}
                     <span class="ml-1 sm:text-[16px] max-sm:text-[14px] text-dimgray font-[500]">
+                      @lang('main.som')
                     </span>
                   </div>
                 </div>
@@ -88,18 +84,18 @@
                     <a class="block sm:text-[16px] max-sm:text-[14px] uppercase transition-all duration-150 ease-linear py-5 hover:border-b-4 hover:text-orange  hover:border-orange"
                       :class="{'text-orange border-b-4 border-orange': tab === 1, 'text-dimgray  ': tab !== 1}" href="#"
                       @click.prevent="tab = 1">
-                      Описание
+                      @lang('main.tavsif')
                     </a>
                     <a class="block sm:text-[16px] max-sm:text-[14px] uppercase sm:ml-10 max-sm:ml-5 transition-all duration-150 ease-linear py-5 hover:border-b-4 hover:text-orange  hover:border-orange"
                       :class="{'text-orange border-b-4 border-orange': tab === 2, 'text-dimgray': tab !== 3}" href="#"
                       @click.prevent="tab = 2">
-                      Технические характеристики
+                      @lang('main.texnik_xususiyatlari')
                     </a>
                   </div>
 
                   <div class="" x-show="tab === 1">
                     <p class="py-4 sm:text-[17px] text-dimgray max-sm:text-[15px]">
-                      {!! $product->{'description_ ' .app()->getLocale()} !!}
+                      {!! $product->{'description_' . app()->getLocale()} !!}
                     </p>
                   </div>
 
