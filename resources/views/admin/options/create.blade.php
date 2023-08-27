@@ -33,6 +33,10 @@
                                   <option value="instagram">Instagram</option>
                                   <option value="facebook">Facebook</option>
                                   <option value="telegram">Telegram</option>
+                                  <option value="meta_title_ru">Meta title RU</option>
+                                  <option value="meta_title_uz">Meta title UZ</option>
+                                  <option value="meta_description_ru">Meta description Ru</option>
+                                  <option value="meta_description_uz">Meta description UZ</option>
                               </select>
                               @if($errors->has('key'))
                                   <div class="alert alert-success alert-dismissible fade show" role="alert">
