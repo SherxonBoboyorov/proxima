@@ -42,7 +42,7 @@
           <div id="dropdownBtn" class="languages-dropdown sm:mx-5 max-sm:mr-2 max-sm:ml-0 relative">
             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
              @if($localeCode != app()->getLocale())
-            <div id="lang-head" class="head text-white text-[16px] cursor-pointer flex items-center">
+              <div id="lang-head" class="head text-white text-[16px] cursor-pointer flex items-center">
               <span class="current-language">{{ strtoupper(app()->getLocale()) }}</span>
               <span class="mx-1 mt-[2px]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 12 7" fill="none">

@@ -8,7 +8,7 @@
         <div class="text-content max-w-screen-xl mx-auto w-full">
           <div class="title max-md:w-full md:w-[60%] max-lg:text-[30px] lg:text-[40px] uppercase text-[white]">{{ $slider->{'title_' . app()->getLocale()} }}</div>
           <div class="description max-lg:text-[16px] lg:text-[20px] my-2 mb-10 text-white max-md:w-full md:w-[60%]">
-                {{ $slider->{'description_' . app()->getLocale()} }}
+              {{ $slider->{'description_' . app()->getLocale()} }}
           </div>
           <a href="{{ $slider->link }}" class="border border-orange py-3 px-4 text-white text-[16px] uppercase">@lang('main.koproq')</a>
         </div>
@@ -166,17 +166,12 @@
       </div>
     </div>
 
-
     <div class="map w-full mx-auto">
       <div class="sm:text-[30px] max-sm:text-[25px] text-dimgray text-center uppercase">Реализованные проекты</div>
       <div class="sm:text-[30px] max-sm:text-[25px] text-orange text-center font-[600]">1000 МВт</div>
 
       <div class="map-block  md:h-[600px] sm:h-[450px] max-sm:h-[370px] border mx-auto w-full mt-10">
-        <iframe src="https://www.google.com/maps/d/embed?mid=1mdqhxOpUiquQr0a4s6M0bV5VhUUOZDI&amp;ehbc=2E312F"
-          class="w-full h-full" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border: 0"
-          allowTransparency="true" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+        <iframe src="https://www.google.com/maps/d/embed?mid=1mdqhxOpUiquQr0a4s6M0bV5VhUUOZDI&amp;ehbc=2E312F" class="w-full h-full" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border: 0" allowTransparency="true" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>
