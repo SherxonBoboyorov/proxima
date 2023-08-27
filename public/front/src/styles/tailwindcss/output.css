@@ -668,6 +668,10 @@ body,
   inset: -0.25rem;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .end-1 {
   inset-inline-end: 0.25rem;
 }
@@ -2201,6 +2205,11 @@ body,
   background-color: rgb(43 43 43 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#423d3d\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(66 61 61 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#E0E0E0\] {
   --tw-bg-opacity: 1;
   background-color: rgb(224 224 224 / var(--tw-bg-opacity));
@@ -3235,6 +3244,12 @@ body,
     justify-content: flex-end;
   }
 
+  .max-md\:truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .max-md\:pl-1 {
     padding-left: 0.25rem;
   }
@@ -3326,6 +3341,10 @@ body,
     height: 260px;
   }
 
+  .max-sm\:h-\[280px\] {
+    height: 280px;
+  }
+
   .max-sm\:h-\[300px\] {
     height: 300px;
   }
@@ -3336,6 +3355,10 @@ body,
 
   .max-sm\:h-\[320px\] {
     height: 320px;
+  }
+
+  .max-sm\:h-\[370px\] {
+    height: 370px;
   }
 
   .max-sm\:h-\[40px\] {
@@ -3391,6 +3414,12 @@ body,
     align-items: flex-start;
   }
 
+  .max-sm\:truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .max-sm\:p-4 {
     padding: 1rem;
   }
@@ -3439,6 +3468,10 @@ body,
     font-size: 16px;
   }
 
+  .max-sm\:text-\[17px\] {
+    font-size: 17px;
+  }
+
   .max-sm\:text-\[18px\] {
     font-size: 18px;
   }
@@ -3453,6 +3486,10 @@ body,
 
   .max-sm\:text-\[24px\] {
     font-size: 24px;
+  }
+
+  .max-sm\:text-\[25px\] {
+    font-size: 25px;
   }
 
   .max-sm\:text-\[28px\] {
@@ -3519,6 +3556,10 @@ body,
     height: 40px;
   }
 
+  .sm\:h-\[450px\] {
+    height: 450px;
+  }
+
   .sm\:h-\[50px\] {
     height: 50px;
   }
@@ -3545,6 +3586,10 @@ body,
 
   .sm\:max-h-\[60px\] {
     max-height: 60px;
+  }
+
+  .sm\:max-h-\[65px\] {
+    max-height: 65px;
   }
 
   .sm\:w-1\/2 {
@@ -3686,12 +3731,20 @@ body,
     height: 330px;
   }
 
+  .md\:h-\[400px\] {
+    height: 400px;
+  }
+
   .md\:h-\[490px\] {
     height: 490px;
   }
 
   .md\:h-\[500px\] {
     height: 500px;
+  }
+
+  .md\:h-\[600px\] {
+    height: 600px;
   }
 
   .md\:h-\[70px\] {
@@ -3753,6 +3806,10 @@ body,
 
   .md\:text-\[28px\] {
     font-size: 28px;
+  }
+
+  .md\:text-\[30px\] {
+    font-size: 30px;
   }
 
   .md\:text-\[32px\] {

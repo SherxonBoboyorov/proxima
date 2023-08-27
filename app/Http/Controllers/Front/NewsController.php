@@ -11,12 +11,16 @@ class NewsController extends Controller
 {
     public function list(Request $request)
     {
-        $news = Article::orderBy('created_at', 'DESC')->paginate(6);
-        $values = Article::select(DB::raw('YEAR(created_at) as year'))->distinct()->pluck('year')->toArray();
+        $news = Article::select(DB::raw('*, Year(created_at) as year'))->orderBy('created_at', 'DESC');
+        if($request->year){
+            $news = $news->whereYear('created_at', $request->year);
+        }
+        $news = $news->paginate(6);
+        $months = Article::select(DB::raw('MONTH(created_at) as month'))->distinct()->pluck('month')->toArray();
 
         return view('front.news.list', compact(
             'news',
-            'values'
+            'months'
         ));
     }
 

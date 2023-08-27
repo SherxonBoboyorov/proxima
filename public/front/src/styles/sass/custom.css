@@ -35,5 +35,30 @@
   .swiper .swiper-button-next:after,
   .swiper .swiper-button-prev:after {
     font-size: 10px !important; } }
+#project-wrapper .project:nth-child(2),
+#project-wrapper .project:nth-child(3),
+#project-wrapper .project:nth-child(5),
+#project-wrapper .project:nth-child(6),
+#project-wrapper .project:nth-child(8),
+#project-wrapper .project:nth-child(9),
+#project-wrapper .project:nth-child(11),
+#project-wrapper .project:nth-child(12),
+#project-wrapper .project:nth-child(14),
+#project-wrapper .project:nth-child(15),
+#project-wrapper .project:nth-child(17),
+#project-wrapper .project:nth-child(18),
+#project-wrapper .project:nth-child(20),
+#project-wrapper .project:nth-child(21),
+#project-wrapper .project:nth-child(23),
+#project-wrapper .project:nth-child(24),
+#project-wrapper .project:nth-child(26),
+#project-wrapper .project:nth-child(27),
+#project-wrapper .project:nth-child(29),
+#project-wrapper .project:nth-child(30) {
+  width: 49.6%; }
+
+@media (max-width: 768px) {
+  #project-wrapper .project {
+    width: 100% !important; } }
 
 /*# sourceMappingURL=custom.css.map */

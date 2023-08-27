@@ -130,7 +130,7 @@
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui
               </div>
               <div class="sm:mt-4 max-sm:mt-2">
-                <a href="#" class="border border-orange  py-2 px-3 text-orange uppercase [@media(min-width:768px)]:text-[14px] [@media(min-width:576px)]:text-[12px] [@media(max-width:576px)]:text-[10px]">@lang('main.koproq')</a>
+                <a href="{{ route('projects') }}" class="border border-orange  py-2 px-3 text-orange uppercase [@media(min-width:768px)]:text-[14px] [@media(min-width:576px)]:text-[12px] [@media(max-width:576px)]:text-[10px]">@lang('main.koproq')</a>
               </div>
 
             </div>
@@ -165,6 +165,21 @@
         </div>
       </div>
     </div>
+
+
+    <div class="map w-full mx-auto">
+      <div class="sm:text-[30px] max-sm:text-[25px] text-dimgray text-center uppercase">Реализованные проекты</div>
+      <div class="sm:text-[30px] max-sm:text-[25px] text-orange text-center font-[600]">1000 МВт</div>
+
+      <div class="map-block  md:h-[600px] sm:h-[450px] max-sm:h-[370px] border mx-auto w-full mt-10">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1mdqhxOpUiquQr0a4s6M0bV5VhUUOZDI&amp;ehbc=2E312F"
+          class="w-full h-full" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border: 0"
+          allowTransparency="true" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      </div>
+    </div>
+  </div>
 
 
     @endsection

@@ -29,7 +29,7 @@
 
         <div class="link-content [@media(max-width:1100px)]:hidden flex text-white text-[16px] justify-between items-center max-w-[50%] w-full mx-5">
           <a href="{{ route('about') }}">@lang('main.kompaniya_haqida')</a>
-          <a href="./project.html">@lang('main.loyihalar') </a>
+          <a href="{{ route('projects') }}">@lang('main.loyihalar') </a>
           <a href="{{ route('products') }}">@lang('main.mahsulotlar') </a>
           <a href="{{ route('question') }}">@lang('main.savollar')</a>
         </div>
@@ -88,7 +88,7 @@
                 @lang('main.kompaniya_haqida') </a>
             </div>
             <div class="link my-3">
-              <a href="./project.html" class="[@media(max-width:480px)]:text-[14px] [@media(min-width:480px)]:text-[18px] font-[500] text-orange">
+              <a href="{{ route('projects') }}" class="[@media(max-width:480px)]:text-[14px] [@media(min-width:480px)]:text-[18px] font-[500] text-orange">
                 @lang('main.loyihalar')</a>
             </div>
             <div class="link my-3">
@@ -202,7 +202,7 @@
                 @lang('main.kompaniya_haqida')</a>
             </div>
             <div class="mb-3">
-              <a href="./project.html" class="hover:text-white text-[#9E9E9E] text-[16px] transition-all duration-100 mb-10 ease-linear uppercase">@lang('main.loyihalar')</a>
+              <a href="{{ route('projects') }}" class="hover:text-white text-[#9E9E9E] text-[16px] transition-all duration-100 mb-10 ease-linear uppercase">@lang('main.loyihalar')</a>
             </div>
             <div class="mb-3">
               <a href="{{ route('products') }}" class="hover:text-white text-[#9E9E9E] text-[16px] transition-all duration-100 mb-10 ease-linear uppercase">@lang('main.mahsulotlar')</a>

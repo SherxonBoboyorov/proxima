@@ -26,6 +26,7 @@ use App\Http\Controllers\Front\IndexController;
 use App\Http\Controllers\Front\LeaderController;
 use App\Http\Controllers\Front\NewsController;
 use App\Http\Controllers\Front\ProductsController;
+use App\Http\Controllers\Front\ProjectsController;
 use App\Http\Controllers\Front\QuestionsController;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
@@ -79,6 +80,8 @@ Route::group(
         Route::get('products/{slug}', [ProductsController::class, 'show'])->name('product');
         Route::get('question', [QuestionsController::class, 'question'])->name('question');
         Route::post('save_yourSave', [IndexController::class, 'yourSave'])->name('yourSave');
+        Route::get('projects', [ProjectsController::class, 'list'])->name('projects');
+        Route::get('projects/{slug}', [ProjectsController::class, 'show'])->name('project');
 
     });
 

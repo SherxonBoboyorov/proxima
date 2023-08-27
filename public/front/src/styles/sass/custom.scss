@@ -79,3 +79,34 @@
     font-size: 10px !important;
   }
 }
+
+#project-wrapper {
+  .project:nth-child(2),
+  .project:nth-child(3),
+  .project:nth-child(5),
+  .project:nth-child(6),
+  .project:nth-child(8),
+  .project:nth-child(9),
+  .project:nth-child(11),
+  .project:nth-child(12),
+  .project:nth-child(14),
+  .project:nth-child(15),
+  .project:nth-child(17),
+  .project:nth-child(18),
+  .project:nth-child(20),
+  .project:nth-child(21),
+  .project:nth-child(23),
+  .project:nth-child(24),
+  .project:nth-child(26),
+  .project:nth-child(27),
+  .project:nth-child(29),
+  .project:nth-child(30) {
+    width: 49.6%;
+  }
+}
+
+@media (max-width: 768px) {
+  #project-wrapper .project {
+    width: 100% !important;
+  }
+}

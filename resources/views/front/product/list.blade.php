@@ -15,7 +15,7 @@
           <div class="breadcrumb text-[#A4A4A4] text-[16px] flex items-center">
             <a href="{{ route('/') }}">@lang('main.bosh_safiha') </a>
             <span class="mx-2">\</span>
-            <a href="./products.html">@lang('main.mahsulotlar')</a>
+            <a href="{{ route('products') }}">@lang('main.mahsulotlar')</a>
           </div>
           <div class="body-content w-full">
             <div class="products my-7 justify-between flex flex-wrap">

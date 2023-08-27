@@ -10,6 +10,18 @@ const searchBtn = document.querySelector("#searchBtn");
 const dropdownContent = document.querySelector("#dropdownContent");
 const dropdownBtn = document.querySelector("#dropdownBtn");
 const currentLanguages = document.querySelector(".current-language");
+const projectWrapper = document.querySelector("#project-wrapper");
+let projectWrapperOld = projectWrapper;
+(function () {
+  console.log(projectWrapperOld.childElementCount);
+  let firstChild = projectWrapper[0];
+  let secondChild = projectWrapper[1];
+  let thirthChild = projectWrapper[2];
+  let fourthtChild = projectWrapper[3];
+
+  // projectWrapper.innerHTML = "<div>bo'sh</div>";
+  // projectWrapper.innerHTML = firstChild;
+})();
 
 navbarToggler?.addEventListener("click", () => {
   offCanvas.classList.add("open-canvas");
@@ -58,11 +70,11 @@ let togglePlayVideo = false;
 videoWrappper?.addEventListener("click", (e) => {
   videoWrappper.querySelector("#videoImg").click();
   const videoModal = document.querySelector(".fancybox-content");
-  const src = videoWrappper?.querySelector(".video-href")?.href.trim()
+  const src = videoModal?.querySelector("video source")?.src?.trim();
 
   setTimeout(() => {
-    if (src) {
-      const newChild = `<video class="fancybox-video m-0 p-0 object-fill" src="${src}" controls></video>`;
+    if (src !== undefined) {
+      const newChild = `<video class="fancybox-video m-0 p-0 object-fill" src="${src}" controls=""></video>`;
       videoModal.innerHTML = newChild;
     }
   }, 100);
@@ -141,3 +153,13 @@ dropdownContent.addEventListener("click", (e) => {
     currentLanguages.textContent = e.target.textContent;
   }
 });
+
+function resizeProjectItem() {
+  const childenCount = projectWrapper?.childElementCount;
+  let childCountArr = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29];
+  let result = childCountArr.filter((num) => num == childenCount);
+  if (childCountArr.includes(childenCount)) {
+    projectWrapper.children[result[0] - 1].style.width = "100%";
+  }
+}
+resizeProjectItem();
