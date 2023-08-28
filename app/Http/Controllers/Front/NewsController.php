@@ -14,6 +14,7 @@ class NewsController extends Controller
         $news = Article::orderBy('created_at', 'DESC')->paginate(6);
         $years = Article::whereYear('created_at', '=', $request->year)->get();
 
+        // dd($request);
         return view('front.news.list', compact(
             'news',
             'years'

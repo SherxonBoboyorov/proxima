@@ -25,8 +25,6 @@ let oldProjectWrapper = projectWrapper.innerHTML;
   if (secondChild) projectWrapper.appendChild(secondChild);
   if (thirthChild) projectWrapper.appendChild(thirthChild);
   if (fourthtChild) projectWrapper.appendChild(fourthtChild);
-  resizeProjectItem()
-
 })();
 
 navbarToggler?.addEventListener("click", () => {
@@ -49,11 +47,11 @@ document.body.addEventListener("click", (e) => {
 
   if (
     e.target.parentElement?.id == "searchBtn" ||
-    e.target.parentElement?.parentElement?.id == "searchBtn" ||
+    e.target.parentElement.parentElement?.id == "searchBtn" ||
     e.target.parentElement?.id == "dropdownBtn" ||
-    e.target.parentElement?.parentElement?.id == "dropdownBtn" ||
-    e.target.parentElement?.parentElement?.parentElement?.id == "dropdownBtn" ||
-    e.target.parentElement?.parentElement?.parentElement?.parentElement?.id ==
+    e.target.parentElement.parentElement?.id == "dropdownBtn" ||
+    e.target.parentElement.parentElement.parentElement?.id == "dropdownBtn" ||
+    e.target.parentElement.parentElement.parentElement.parentElement?.id ==
       "dropdownBtn" ||
     e.target == searchContent ||
     e.target.parentElement.parentElement == searchContent ||
@@ -106,10 +104,10 @@ function submitApplicationModalOpen() {
 
 function openSearch(e) {
   if (
-    e.target.parentElement?.id == "searchBtn" ||
-    e.target.parentElement?.parentElement?.id == "searchBtn"
+    e.target.parentElement.id == "searchBtn" ||
+    e.target.parentElement.parentElement.id == "searchBtn"
   )
-    if (searchContent?.classList.contains("block")) {
+    if (searchContent.classList.contains("block")) {
       if (e.target == searchContent || e.target.parentElement == searchContent);
       else {
         searchContent.classList.remove("block");
@@ -128,15 +126,15 @@ function openSearch(e) {
 function openDropdown(e) {
   if (
     e.target.parentElement?.id == "dropdownBtn" ||
-    e.target.parentElement?.parentElement?.id == "dropdownBtn" ||
-    e.target.parentElement?.parentElement?.parentElement?.id == "dropdownBtn" ||
-    e.target.parentElement?.parentElement?.parentElement?.parentElement?.id ==
+    e.target.parentElement.parentElement?.id == "dropdownBtn" ||
+    e.target.parentElement.parentElement.parentElement?.id == "dropdownBtn" ||
+    e.target.parentElement.parentElement.parentElement.parentElement?.id ==
       "dropdownBtn"
   )
     if (dropdownContent.classList.contains("block")) {
       if (
         e.target == dropdownContent ||
-        e.target?.parentElement == dropdownContent
+        e.target.parentElement == dropdownContent
       );
       else {
         dropdownContent.classList.remove("block");
@@ -166,12 +164,14 @@ function resizeProjectItem() {
   let result = childCountArr.filter((num) => num == childenCount);
   if (childCountArr.includes(childenCount)) {
     projectWrapper.children[result[0] - 1].style.width = "100%";
+    projectWrapper.children[result[0] - 1].querySelector(
+      ".bottom-text"
+    ).style.display = "block";
   }
 }
 resizeProjectItem();
 
 function moreProject() {
-  console.log('kkk');
   projectWrapper.innerHTML = oldProjectWrapper;
   resizeProjectItem();
   moreProjectBtn.classList.add("hidden");

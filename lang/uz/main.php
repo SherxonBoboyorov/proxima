@@ -32,7 +32,7 @@ return [
     'arizangizni_yuboring' => 'Arizangizni yuboring',
     'toliq_ism' => 'To\'liq ism',
     'qidirmoq' => 'Qidirmoq',
-    'koproq_korsatish' => 'Ko\'proq ko\'rsatish'
+    'koproq_korsatish' => 'Ko\'proq ko\'rsatish',
     
 
 ];

@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('front/src/public/icons/favicon.jpg') }}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('front/src/public/icons/favicon.jpg') }}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link href="{{ asset('front/src/styles/tailwindcss/output.css') }}" rel="stylesheet" />
