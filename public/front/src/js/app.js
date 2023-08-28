@@ -12,7 +12,7 @@ const dropdownBtn = document.querySelector("#dropdownBtn");
 const currentLanguages = document.querySelector(".current-language");
 const projectWrapper = document.querySelector("#project-wrapper");
 const moreProjectBtn = document.querySelector("#moreProjectBtn");
-let oldProjectWrapper = projectWrapper.innerHTML;
+let oldProjectWrapper = "";
 
 (function () {
   let firstChild = projectWrapper?.children?.[0];
@@ -20,11 +20,14 @@ let oldProjectWrapper = projectWrapper.innerHTML;
   let thirthChild = projectWrapper?.children?.[2];
   let fourthtChild = projectWrapper?.children?.[3];
 
-  projectWrapper.innerHTML = "";
-  if (firstChild) projectWrapper.appendChild(firstChild);
-  if (secondChild) projectWrapper.appendChild(secondChild);
-  if (thirthChild) projectWrapper.appendChild(thirthChild);
-  if (fourthtChild) projectWrapper.appendChild(fourthtChild);
+  if (projectWrapper !== null) {
+    oldProjectWrapper = projectWrapper.innerHTML;
+    projectWrapper.innerHTML = "";
+    if (firstChild) projectWrapper.appendChild(firstChild);
+    if (secondChild) projectWrapper.appendChild(secondChild);
+    if (thirthChild) projectWrapper.appendChild(thirthChild);
+    if (fourthtChild) projectWrapper.appendChild(fourthtChild);
+  }
 })();
 
 navbarToggler?.addEventListener("click", () => {
@@ -172,7 +175,9 @@ function resizeProjectItem() {
 resizeProjectItem();
 
 function moreProject() {
-  projectWrapper.innerHTML = oldProjectWrapper;
-  resizeProjectItem();
-  moreProjectBtn.classList.add("hidden");
+  if (projectWrapper !== null) {
+    projectWrapper.innerHTML = oldProjectWrapper;
+    resizeProjectItem();
+    moreProjectBtn.classList.add("hidden");
+  }
 }

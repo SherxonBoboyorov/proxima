@@ -33,7 +33,8 @@ return [
     'toliq_ism' => 'To\'liq ism',
     'qidirmoq' => 'Qidirmoq',
     'koproq_korsatish' => 'Ko\'proq ko\'rsatish',
-    
+    'qidiruv_natijalari' => 'Qidiruv natijalari'
+     
 
 ];
 

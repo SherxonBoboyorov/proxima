@@ -73,7 +73,12 @@
             </div>
 
             <div class="body mt-2 h-fit">
+
+              
               <div class="text-content text-dimgray sm:text-[18px] max-sm:text-[15px] mt-1">
+                <div class="img-content w-full mt-6 md:h-[500px] sm:h-[400px] max-sm:h-[250px]">
+                  <img src="{{ asset($new->image) }}" class="w-full h-full object-cover" alt="">  
+                </div><br>
                  {!! $new->{'content_' . app()->getLocale()} !!}
               </div>
             </div>

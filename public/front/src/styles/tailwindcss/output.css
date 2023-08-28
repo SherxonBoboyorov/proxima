@@ -2436,6 +2436,11 @@ body,
   padding-right: 1.25rem;
 }
 
+.px-7 {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -2459,11 +2464,6 @@ body,
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-
-.px-7 {
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
 }
 
 .pl-0 {
@@ -3377,6 +3377,10 @@ body,
   .max-sm\:h-fit {
     height: -moz-fit-content;
     height: fit-content;
+  }
+
+  .max-sm\:h-\[270px\] {
+    height: 270px;
   }
 
   .max-sm\:max-h-\[54px\] {

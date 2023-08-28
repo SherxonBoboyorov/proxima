@@ -67,8 +67,9 @@
             </svg>
 
             <div id="searchContent" class="search-content hidden w-[260px] h-[45px] border border-white bg-transparent absolute top-[40px] right-0">
-              <form action="" class="w-full h-full p-0 m-0 flex ">
-                <input type="text" class="border-none bg-transparent placeholder:text-white text-[18px] outline-none w-full h-full px-3 py-2 text-white" placeholder="@lang('main.qidirmoq')...">
+              <form action="{{ route('front_search') }}" class="w-full h-full p-0 m-0 flex" method="GET">
+                @csrf
+                <input type="text" name="phrase" type="search" class="border-none bg-transparent placeholder:text-white text-[18px] outline-none w-full h-full px-3 py-2 text-white" placeholder="@lang('main.qidirmoq')...">
                 <button type="submit" class="p-2 border-l"> <svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full" viewBox="0 0 28 28" fill="none">
                     <path d="M21 12.25C21 17.0824 17.0824 21 12.25 21C7.4175 21 3.5 17.0824 3.5 12.25C3.5 7.4175 7.4175 3.5 12.25 3.5C17.0824 3.5 21 7.4175 21 12.25Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M23.3336 23.3334L18.4375 18.4373" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

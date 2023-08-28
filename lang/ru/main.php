@@ -31,7 +31,9 @@ return [
      'arizangizni_yuboring' => 'Оставить заявку',
      'toliq_ism' => 'ФИО',
      'qidirmoq' => 'Поиск',
-     'koproq_korsatish' => 'Показать еще'
+     'koproq_korsatish' => 'Показать еще',
+     'qidiruv_natijalari' => 'Результаты поиска'
+
 ];
 
 ?>
