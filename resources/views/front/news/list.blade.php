@@ -1,18 +1,5 @@
 @extends('layouts.front')
 
-
-@php
-    $years = [
-        1 =>  2017,
-        2 =>  2018,
-        3 =>  2019,
-        4 =>  2020,
-        5 =>  2021,
-        6 =>  2022,
-        7 =>  2023, 
-    ];
-@endphp
-
 @section('content')
 
     <div class="main mb-52 h-fit">
@@ -55,14 +42,14 @@
             </div>
 
 
-            @foreach($months as $value)
+            @foreach($years as $value)
              <div id="filterForm" class="years flex justify-start items-center my-4 overflow-auto">
                @csrf
-                 @foreach($years as $k=>$item)
-                   <a href="{{ route('news', ["year" => $k]) }}" class="mr-3 text-dimgray [&.active-year]:text-orange text-[16px]" name="year">{{ $item }}</a>
-                 @endforeach
+                   <a href="{{ route('news', ["year" => $value]) }}" class="mr-3 text-dimgray [&.active-year]:text-orange text-[16px" name="year">{{ $value }}</a>
                </div>
             @endforeach
+
+
 
           <div id="result_section">
             <div class="body mt-2 h-fit">

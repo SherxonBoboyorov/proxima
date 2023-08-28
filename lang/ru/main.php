@@ -30,8 +30,8 @@ return [
      'yuborish' => 'Отправить',
      'arizangizni_yuboring' => 'Оставить заявку',
      'toliq_ism' => 'ФИО',
-     'qidirmoq' => 'Qidirmoq'
-
+     'qidirmoq' => 'Поиск',
+     'koproq_korsatish' => 'Показать еще'
 ];
 
 ?>
