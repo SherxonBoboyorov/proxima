@@ -11,11 +11,6 @@ class NewsController extends Controller
 {
     public function list(Request $request)
     {
-        // $news = Article::orderBy('created_at', 'DESC')->paginate(6);
-
-        // $query = Article::select(DB::raw('YEAR(created_at) as year', $request->year))->get();
-        // $query->where('Year', '=', $request->year);
-
         $news = Article::select(DB::raw('*, Year(created_at) as year'))->orderBy('created_at', 'DESC');
         if($request->year){
             $news = $news->whereYear('created_at', $request->year);
@@ -32,11 +27,11 @@ class NewsController extends Controller
     public function show($slug)
     {
         $new = Article::where('slug_uz', $slug)
-        ->orWhere('slug_ru', $slug)
-        ->first();
+             ->orWhere('slug_ru', $slug)
+             ->first();
 
         return view('front.news.show', compact(
-            'new'
+            'new',
         ));
     }
 }

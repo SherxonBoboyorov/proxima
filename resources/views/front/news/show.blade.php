@@ -57,12 +57,13 @@
                   <span class="ml-3 text-dimgray sm:text-[16px] max-sm:text-[14px] uppercase">@lang('main.barcha_yangiliklar')</span>
                 </a>
               </div>
+              
               <div class="other-btns md:w-fit flex justify-between items-center max-md:w-full max-md:-translate-y-6">
-                <a href="#" class="sm:py-2 sm:px-3 max-sm:py-1 max-sm:px-2 uppercase text-dimgray sm:text-[14px] text-center max-sm:text-[12px] border border-[#E0E0E0] mr-2">Предыдущая
-                  новость
+                <a href="#" class="sm:py-2 sm:px-3 max-sm:py-1 max-sm:px-2 uppercase text-dimgray sm:text-[14px] text-center max-sm:text-[12px] border border-[#E0E0E0] mr-2">
+                  @lang('main.oldingi_yangiliklar')
                 </a>
-                <a href="#" class="sm:py-2 sm:px-3 max-sm:py-1 max-sm:px-2 uppercase text-dimgray sm:text-[14px]  text-center max-sm:text-[12px] border border-[#E0E0E0]">следующая
-                  новость
+                <a href="#" class="sm:py-2 sm:px-3 max-sm:py-1 max-sm:px-2 uppercase text-dimgray sm:text-[14px]  text-center max-sm:text-[12px] border border-[#E0E0E0]">
+                    @lang('main.keyingi_yangiliklar')
                 </a>
               </div>
             </div>
@@ -71,10 +72,7 @@
             <div class="title text-dimgray md:text-[34px] sm:text-[28px] max-sm:text-[24px] font-[600]">
               {{ $new->{'title_' . app()->getLocale()} }}
             </div>
-
             <div class="body mt-2 h-fit">
-
-              
               <div class="text-content text-dimgray sm:text-[18px] max-sm:text-[15px] mt-1">
                 <div class="img-content w-full mt-6 md:h-[500px] sm:h-[400px] max-sm:h-[250px]">
                   <img src="{{ asset($new->image) }}" class="w-full h-full object-cover" alt="">  

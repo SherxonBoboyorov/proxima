@@ -84,7 +84,7 @@ Route::group(
         Route::get('projects', [ProjectsController::class, 'list'])->name('projects');
         Route::get('projects/{slug}', [ProjectsController::class, 'show'])->name('project');
         Route::get('front_search', [SerachController::class, 'search'])->name('front_search');
-
+        // Route::get('news/{news}', [NewsController::class])->name('news.show');
     });
 
 
