@@ -74,7 +74,7 @@ Route::group(
         Route::get('about', [AboutController::class, 'about'])->name('about');
         Route::get('news', [NewsController::class, 'list'])->name('news');
         Route::post('news/ajax-filter', [NewsController::class, 'ajaxFilterList'])->name('news.ajaxFilter');
-        Route::get('news/{slug}', [NewsController::class, 'show'])->name('new');
+        Route::get('news/{slug}', [NewsController::class, 'show'])->name('new.show');
         Route::get('contact', [ContactController::class, 'contact'])->name('contact');
         Route::get('team', [LeaderController::class, 'team'])->name('team');
         Route::get('products', [ProductsController::class, 'list'])->name('products');
@@ -84,7 +84,6 @@ Route::group(
         Route::get('projects', [ProjectsController::class, 'list'])->name('projects');
         Route::get('projects/{slug}', [ProjectsController::class, 'show'])->name('project');
         Route::get('front_search', [SerachController::class, 'search'])->name('front_search');
-        // Route::get('news/{news}', [NewsController::class])->name('news.show');
     });
 
 

@@ -71,4 +71,24 @@ class Article extends Model
 
         return true;
     }
+
+
+     
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function getNextAttribute(){
+        return static::where('id', '>', $this->id)->orderBy('id','asc')->first();
+    }
+ 
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public  function getPreviousAttribute(){
+        return static::where('id', '<', $this->id)->orderBy('id','desc')->first();
+    }
 }

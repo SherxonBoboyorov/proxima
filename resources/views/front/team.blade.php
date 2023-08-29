@@ -63,7 +63,7 @@
                             @lang('main.lavozim'): <span class="font-600] ml-2"> {{ $team->{'job_title_' . app()->getLocale()} }} </span>
                           </div>
                           <div class="phone-number md:text-[18px] sm:text-[16px] max-sm:text-[14px] my-2">
-                            @lang('main.telefon_raqami'): <span class="font-600] ml-2"> {{ $team->phone_number }} </span>
+                            @lang('main.telefon_raqami'): <span class="font-600] ml-2"> {{ $team->phone }} </span>
                           </div>
                           <div class="email md:text-[18px] sm:text-[16px] max-sm:text-[14px] my-2">
                             @lang('main.email'): <span class="font-600] ml-2"> {{ $team->email }} </span>

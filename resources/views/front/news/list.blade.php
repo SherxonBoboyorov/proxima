@@ -68,7 +68,7 @@
               <div class="card-wrapper w-full mt-7">
                 @foreach($news as $new)
                 <div class="card w-full mb-7 sm:h-[280px] max-sm:h-[200px] [@media(max-width:450px)]:h-fit">
-                  <a href="{{ route('new', $new->{'slug_' . app()->getLocale()}) }}" class="card-content flex flex-wrap w-full h-full  border">
+                  <a href="{{ route('new.show', $new->{'slug_' . app()->getLocale()}) }}" class="card-content flex flex-wrap w-full h-full  border">
                     <div class="img-content h-full [@media(min-width:450px)]:w-[45%] [@media(max-width:450px)]:w-full [@media(max-width:450px)]:h-[200px]">
                       <img src="{{ asset($new->image) }}" alt="" class="w-full h-full object-cover">
                     </div>

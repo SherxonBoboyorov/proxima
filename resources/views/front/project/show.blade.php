@@ -27,8 +27,9 @@
               {!! $project->{'sub_content_' . app()->getLocale()} !!}
             </div>
 
-            <div class="numbers mt-5 flex flex-wrap  w-full">
+            <div class="title md:text-[30px] sm:text-[26px] max-sm:text-[22px] max-sm:truncate">
               {!! $project->{'statistic_' . app()->getLocale()} !!}</div>
+
             </div>
 
             <div class="swiper mySwiper mt-16">

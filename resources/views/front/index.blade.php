@@ -144,7 +144,7 @@
         <div class="card-wrapper w-full flex justify-between flex-wrap mt-7">
           @foreach($news as $new)
           <div class="card [@media(min-width:850px)]:w-1/3 [@media(min-width:500px)]:w-1/2 [@media(max-width:500px)]:w-full px-2 mb-4">
-            <a href="{{ route('new', $new->{'slug_' . app()->getLocale()}) }}" class="card-content w-full block h-full border">
+            <a href="{{ route('new.show', $new->{'slug_' . app()->getLocale()}) }}" class="card-content w-full block h-full border">
               <div class="img-content w-full [@media(min-width:500px)]:h-[230px] [@media(max-width:500px)]:h-[200px]">
                 <img src="{{ asset($new->image) }}" alt="" class="w-full h-full object-cover">
               </div>
