@@ -93,6 +93,5 @@
         <iframe src="https://www.google.com/maps/d/embed?mid=1mdqhxOpUiquQr0a4s6M0bV5VhUUOZDI&amp;ehbc=2E312F" class="w-full h-full" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border: 0" allowTransparency="true" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
-  {{-- </div> --}}
 
    @endsection

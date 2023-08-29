@@ -5,8 +5,7 @@
     <div class="main mb-52 h-fit">
       <div class="back-img px-4 h-[200px] mx-auto w-full bg-no-repeat bg-center flex items-center bg-cover  justify-center" style="background-image: url('{{ asset('front/src/public/images/back-img.jpg') }}');">
         <div class="text-content max-w-screen-xl mx-auto w-full">
-          <div
-            class="title mt-10 max-md:w-full font-[400] md:w-[60%] max-lg:text-[25px] lg:text-[30px] uppercase text-[white]">
+          <div class="title mt-10 max-md:w-full font-[400] md:w-[60%] max-lg:text-[25px] lg:text-[30px] uppercase text-[white]">
             @lang('main.savollar')
           </div>
         </div>

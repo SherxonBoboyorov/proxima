@@ -21,7 +21,7 @@
 
           <div class="body-content h-fit w-full">
             <div id="project-wrapper" class="project-wrapper flex flex-wrap mt-5 w-full justify-between">
-                    @foreach($projects as $project)
+                 @foreach($projects as $project)
                    <a href="{{ route('project', $project->id) }}" class="project mb-2 md:h-[400px] sm:h-[350px] max-sm:h-[280px] border w-full bg-no-repeat bg-cover bg-center flex flex-wrap items-stretch relative" style="background-image: url({{ asset($project->image) }});">
                       <div class="top-text w-full h-fit absolute left-0 top-0 px-7 py-5">
                          <div class="title md:text-[30px] sm:text-[26px] max-sm:text-[22px] text-white max-md:truncate">

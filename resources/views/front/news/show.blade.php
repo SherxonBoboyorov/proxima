@@ -4,7 +4,7 @@
 
     <div class="main mb-20 h-fit">
       <div class="back-img px-4 h-[200px] mx-auto w-full bg-no-repeat bg-center flex items-center bg-cover  justify-center" style="background-image: url('{{ asset('front/src/public/images/back-img.jpg') }}');">
-
+        
         <div class="text-content max-w-screen-xl mx-auto w-full">
           <div class="title mt-10 max-md:w-full font-[400] md:w-[60%] max-lg:text-[25px] lg:text-[30px] uppercase text-[white]">
             @lang('main.yangiliklar')</div>
@@ -18,24 +18,18 @@
                 @lang('main.kompaniya_haqida')
               </a>
             </div>
-            <div
-              class="mb-3 active-link text-dimgray before:text-orange [&.active-link]:before:content-['_-'] [&.active-link]:text-orange [&.active-link]:before:-ml-2.5">
-              <a href="{{ route('news') }}"
-                class="text-[18px] text-inherit hover:text-orange uppercase transition-all duration-150 ease-linear">
+            <div class="mb-3 active-link text-dimgray before:text-orange [&.active-link]:before:content-['_-'] [&.active-link]:text-orange [&.active-link]:before:-ml-2.5">
+              <a href="{{ route('news') }}" class="text-[18px] text-inherit hover:text-orange uppercase transition-all duration-150 ease-linear">
                 @lang('main.yangiliklar')
               </a>
             </div>
-            <div
-              class="mb-3 text-dimgray before:text-orange [&.active-link]:before:content-['_-'] [&.active-link]:text-orange [&.active-link]:before:-ml-2.5">
-              <a href="{{ route('team') }}"
-                class="text-[18px] text-inherit hover:text-orange uppercase transition-all duration-150 ease-linear">
+            <div class="mb-3 text-dimgray before:text-orange [&.active-link]:before:content-['_-'] [&.active-link]:text-orange [&.active-link]:before:-ml-2.5">
+              <a href="{{ route('team') }}" class="text-[18px] text-inherit hover:text-orange uppercase transition-all duration-150 ease-linear">
                 @lang('main.jamoa')
               </a>
             </div>
-            <div
-              class="mb-3 text-dimgray before:text-orange [&.active-link]:before:content-['_-'] [&.active-link]:text-orange [&.active-link]:before:-ml-2.5">
-              <a href="{{ route('contact') }}"
-                class="text-[18px] text-inherit hover:text-orange uppercase transition-all duration-150 ease-linear">
+            <div class="mb-3 text-dimgray before:text-orange [&.active-link]:before:content-['_-'] [&.active-link]:text-orange [&.active-link]:before:-ml-2.5">
+              <a href="{{ route('contact') }}" class="text-[18px] text-inherit hover:text-orange uppercase transition-all duration-150 ease-linear">
                 @lang('main.kontaktlar')
               </a>
             </div>
@@ -48,8 +42,7 @@
             </div>
 
             <div class="btns flex w-full justify-between items-center sm:mt-2 max-sm:mt-4 flex-wrap">
-              <div
-                class="all-news-btn w-fit max-md:w-full h-full max-md:flex max-md:justify-end max-md:items-start max-md:-translate-y-[38px]">
+              <div class="all-news-btn w-fit max-md:w-full h-full max-md:flex max-md:justify-end max-md:items-start max-md:-translate-y-[38px]">
                 <a href="{{ route('news') }}" class="flex justify-between items-center w-fit">
                   <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">
                     <path d="M8 1L0.999999 8L8 15" stroke="#FC7E1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
