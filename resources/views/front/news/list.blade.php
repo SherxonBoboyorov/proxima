@@ -11,6 +11,7 @@
       2018 => 2018,
       2017 => 2017,
     ];
+
 @endphp
 
 @section('content')
@@ -65,20 +66,25 @@
 
           <div id="result_section">
             <div class="body mt-2 h-fit">
+
               <div class="card-wrapper w-full mt-7">
                 @foreach($news as $new)
                 <div class="card w-full mb-7 sm:h-[280px] max-sm:h-[200px] [@media(max-width:450px)]:h-fit">
-                  <a href="{{ route('new.show', $new->{'slug_' . app()->getLocale()}) }}" class="card-content flex flex-wrap w-full h-full  border">
-                    <div class="img-content h-full [@media(min-width:450px)]:w-[45%] [@media(max-width:450px)]:w-full [@media(max-width:450px)]:h-[200px]">
+                  <a href="http://proxima.sosgroup.uz/ru/news/solnechnye-paneli-eto-ekologicheski-chistyy-istochnik-energii" class="card-content flex flex-wrap w-full h-full  border">
+                    <div
+                      class="img-content h-full [@media(min-width:450px)]:w-[45%] [@media(max-width:450px)]:w-full [@media(max-width:450px)]:h-[200px]">
                       <img src="{{ asset($new->image) }}" alt="" class="w-full h-full object-cover">
                     </div>
-                    <div class="text-content [@media(min-width:450px)]:w-[55%] [@media(max-width:450px)]:w-full sm:px-7 max-sm:px-4 py-4 flex items-center">
+                    <div
+                      class="text-content [@media(min-width:450px)]:w-[55%] [@media(max-width:450px)]:w-full sm:px-7 max-sm:px-4 py-4 flex items-center">
                       <div class="text-body h-fit w-full">
                         <div class="date text-orange text-[14px]">{{  date('d.m.Y', strtotime($new->created_at)) }}</div>
-                        <div class="title text-dimgray font-[600] my-1 sm:text-[20px] max-sm:text-[18px] overflow-hidden">
+                        <div
+                          class="title text-dimgray font-[600] my-1 sm:text-[20px] max-sm:text-[18px] overflow-hidden">
                           {{ $new->{'title_' . app()->getLocale()} }}
                         </div>
-                        <div class="description text-dimgray sm:text-[16px] max-sm:text-[14px] sm:max-h-[125px] max-sm:max-h-[65px] overflow-hidden">
+                        <div
+                          class="description text-dimgray sm:text-[16px] max-sm:text-[14px] sm:max-h-[121px] max-sm:max-h-[65px] overflow-hidden">
                           {!! $new->{'content_' . app()->getLocale()} !!}
                         </div>
                       </div>

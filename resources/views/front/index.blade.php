@@ -55,10 +55,10 @@
 
       <div class="facade-wrapper mx-auto max-sm:h-[320px] sm:h-[390px] md:h-[490px] lg:h-[590px] w-full relative">
         @foreach($pages as $page)
-          
         <img src="{{ asset($page->image) }}" alt="" class="w-full h-full object-cover">
         <div class="wrapper-centered w-1/2 absolute top-0 left-0 h-full bg-[#ffffffe8] z-10">
         </div>
+
         <div class="wrapper-centered max-w-screen-xl px-5 w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2  h-full bg-[#ff000000] z-20">
           <div class="left-part w-1/2 h-full flex justify-start items-center">
             <div class="box p-5 pl-0 w-full -mt-2">
@@ -68,8 +68,8 @@
               <div class="title text-dimgray [@media(min-width:768px)]:text-[24px] [@media(min-width:576px)]:text-[20px] [@media(min-width:480px)]:text-[18px] [@media(max-width:480px)]:text-[16px] uppercase">
                 @lang('main.kompaniya_haqida')</div>
               <hr class="w-[30px] bg-orange border-none h-[2px] md:my-3 max-md:my-1">
-              <div class="description text-dimgray  [@media(min-width:768px)]:max-h-[145px] [@media(min-width:576px)]:max-h-[110px] [@media(max-width:576px)]:max-h-[55px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
-               {{ $page->{'sub_content_' . app()->getLocale()} }}
+              <div class="description text-dimgray [@media(min-width:768px)]:max-h-[265px] [@media(min-width:640px)]:max-h-[210px] [@media(max-width:640px)]:max-h-[180px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:640px)]:text-[14px] [@media(max-width:640px)]:text-[12px]">
+                {{ $page->{'sub_content_' . app()->getLocale()} }}
               </div>
               <div class="sm:mt-4 max-sm:mt-2">
                 <a href="{{ route('about') }}" class="border border-orange  py-2 px-3 text-orange uppercase [@media(min-width:768px)]:text-[14px] [@media(min-width:576px)]:text-[12px] [@media(max-width:576px)]:text-[10px]">@lang('main.koproq')</a>
@@ -78,39 +78,30 @@
           </div>
         </div>
         @endforeach
-
       </div>
 
-      <div class="efficiency-wrapper mx-auto overflow-hidden [@media(min-width:768px)]:h-[600px] [@media(min-width:576px)]:h-[520px] [@media(min-width:480px)]:h-[420px] [@media(max-width:480px)]:h-[380px] max-w-screen-xl flex justify-between">
-          @foreach($efficiencies as $efficiency)
-            
+    <div class="efficiency-wrapper mx-auto overflow-hidden [@media(min-width:768px)]:h-[600px] [@media(min-width:576px)]:h-[520px] [@media(min-width:480px)]:h-[420px] [@media(max-width:480px)]:h-[380px] max-w-screen-xl flex justify-between">
+        @foreach($efficiencies as $efficiency)
         <div class="img-content w-1/2 h-full">
-          <img src="{{ asset($efficiency->image) }}" alt="" class="w-full h-full object-cover">
-        </div>
-        <div class="text-content w-1/2 h-full flex items-center md:pl-10 max-md:pl-5">
-          <div class="box p-5 pl-0 w-full -mt-2">
-            <div class="icon md:w-[100px] md:h-[100px] sm:w-[80px] sm:h-[80px] max-sm:w-[60px] max-sm:h-[60px] ">
-              <img src="{{ asset($efficiency->icon) }}" alt="" class="w-full h-full -ml-3">
-            </div>
-            <div class="title text-dimgray [@media(min-width:768px)]:text-[24px] [@media(min-width:576px)]:text-[20px] [@media(min-width:480px)]:text-[18px] [@media(max-width:480px)]:text-[16px] uppercase">
-            {{ $efficiency->{'title_' . app()->getLocale()} }}</div>
-            <hr class="w-[30px] bg-orange border-none h-[2px] md:my-3 max-md:my-1">
-            <div class="description text-dimgray  [@media(min-width:768px)]:max-h-[145px] [@media(min-width:576px)]:max-h-[110px] [@media(max-width:576px)]:max-h-[55px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
-              {!! $efficiency->{'content_' . app()->getLocale()} !!}
-            </div>
-             <hr class="bg-[#E0E0E0] sm:my-4 max-sm:my-2">
-             
-             <div class="flex justify-between flex-wrap">
-              <div class="left-text md:w-1/2 max-md:w-full pr-3 mb-1">
-                <div class="description text-dimgray  [@media(min-width:768px)]:max-h-[50px] [@media(min-width:576px)]:max-h-[42px] [@media(max-width:576px)]:max-h-[38px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
-                  {!! $efficiency->{'statistic_content_' . app()->getLocale()} !!}
-                </div>
-              </div>
+        <img src="{{ asset($efficiency->image) }}" alt="" class="w-full h-full object-cover">
+      </div>
+      <div class="text-content w-1/2 h-full flex items-center md:pl-10 max-md:pl-5">
+        <div class="box p-5 pl-0 w-full -mt-2">
+          <div class="icon md:w-[100px] md:h-[100px] sm:w-[80px] sm:h-[80px] max-sm:w-[60px] max-sm:h-[60px] ">
+            <img src="{{ asset($efficiency->icon) }}" alt="" class="w-full h-full -ml-3">
           </div>
+          <div class="title text-dimgray [@media(min-width:768px)]:text-[24px] [@media(min-width:576px)]:text-[20px] [@media(min-width:480px)]:text-[18px] [@media(max-width:480px)]:text-[16px] uppercase">
+            {!! $efficiency->{'content_' . app()->getLocale()} !!}</div>
+          <hr class="w-[30px] bg-orange border-none h-[2px] md:my-3 max-md:my-1">
+          <div
+            class="description text-dimgray [@media(min-width:768px)]:max-h-[360px] mt-2 [@media(min-width:576px)]:max-h-[340px] [@media(max-width:576px)]:max-h-[255px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
+            {!! $efficiency->{'statistic_content_' . app()->getLocale()} !!}
+          </div>
+
         </div>
       </div>
-        @endforeach
-      </div>
+      @endforeach
+    </div>
       
       <div class="project-wrapper mx-auto max-sm:h-[320px] sm:h-[390px] md:h-[490px] lg:h-[590px] w-full relative">
         <img src="{{ asset('front/src/public/images/project-img.png') }}" alt="" class="w-full h-full object-cover">
@@ -122,21 +113,25 @@
               <div class="icon md:w-[100px] md:h-[100px] sm:w-[80px] sm:h-[80px] max-sm:w-[60px] max-sm:h-[60px] ">
                 <img src="{{ asset('front//src/public/icons/project-icon.png') }}" alt="" class="w-full h-full -ml-3">
               </div>
-              <div class="title text-dimgray [@media(min-width:768px)]:text-[24px] [@media(min-width:576px)]:text-[20px] [@media(min-width:480px)]:text-[18px] [@media(max-width:480px)]:text-[16px] uppercase">
+              <div
+                class="title text-dimgray [@media(min-width:768px)]:text-[24px] [@media(min-width:576px)]:text-[20px] [@media(min-width:480px)]:text-[18px] [@media(max-width:480px)]:text-[16px] uppercase">
                 @lang('main.bizning_loyihalarimiz')</div>
               <hr class="w-[30px] bg-orange border-none h-[2px] md:my-3 max-md:my-1">
-              <div class="description text-dimgray  [@media(min-width:768px)]:max-h-[145px] [@media(min-width:576px)]:max-h-[110px] [@media(max-width:576px)]:max-h-[55px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
+              <div
+                class="description text-dimgray max-sm:max-h-[165px] sm:max-h-[210px] md:maxh-[265px] lg:max-h-[340px] overflow-hidden [@media(min-width:768px)]:text-[16px] [@media(min-width:576px)]:text-[14px] [@media(max-width:576px)]:text-[12px]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui
               </div>
               <div class="sm:mt-4 max-sm:mt-2">
-                <a href="{{ route('projects') }}" class="border border-orange  py-2 px-3 text-orange uppercase [@media(min-width:768px)]:text-[14px] [@media(min-width:576px)]:text-[12px] [@media(max-width:576px)]:text-[10px]">@lang('main.koproq')</a>
+                <a href="{{ route('projects') }}"
+                  class="border border-orange  py-2 px-3 text-orange uppercase [@media(min-width:768px)]:text-[14px] [@media(min-width:576px)]:text-[12px] [@media(max-width:576px)]:text-[10px]">@lang('main.koproq')</a>
               </div>
 
             </div>
           </div>
         </div>
       </div>
+
 
       <!-- remove 4th child -->
       <div class="news mx-auto max-w-screen-xl px-2 py-16">

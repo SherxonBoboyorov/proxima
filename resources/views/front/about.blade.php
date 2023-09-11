@@ -48,7 +48,7 @@
 
               <div class="text-content text-dimgray sm:text-[18px] max-sm:text-[16px] mt-1">
                 
-                <div class="text ">
+                <div class="text">
                   @foreach($pages as $page)
                   {!! $page->{'content_' . app()->getLocale()} !!}
                   @endforeach
@@ -56,28 +56,29 @@
 
                 <div class="some-inform-wrapper mt-10 mx-auto overflow-hidden h-fit w-full ">
                   @foreach($pageins as $pagein)
-                    
-                  <div class="w-full mx-auto flex flex-wrap md:h-[330px] sm:h-[280px] max-sm:h-fit justify-between some-inform sm:mb-10 max-sm:mb-5">
-                    <div class="text-content sm:w-[40%] max-sm:w-full h-full flex sm:items-center max-sm:items-start">
-                      <div class="box p-5 pl-0 w-full">
+                  <div class="w-full mx-auto some-inform sm:mb-10 max-sm:mb-5">
+                    <div class="text-content mb-5">
+                      <div class="box ">
                         <div class="icon md:w-[70px] md:h-[70px] max-md:w-[50px]  max-md:h-[50px] max-md:pl-1">
                           <img src="{{ asset($pagein->icon) }}" alt="" class="w-full h-full -ml-3">
                         </div>
-                        <div class="title text-dimgray [@media(min-width:768px)]:text-[22px] [@media(min-width:576px)]:text-[19px] [@media(min-width:480px)]:text-[17px] [@media(max-width:480px)]:text-[15px] uppercase">
+                        <div
+                          class="title text-dimgray [@media(min-width:768px)]:text-[22px] [@media(min-width:576px)]:text-[19px] [@media(min-width:480px)]:text-[17px] [@media(max-width:480px)]:text-[15px] uppercase">
                           {{ $pagein->{'title_' . app()->getLocale()} }}</div>
                         <hr class="w-[30px] bg-orange border-none h-[2px] md:my-3 max-md:my-1">
-                        <div class="description text-dimgray max-h-[78px] overflow-hidden text-[16px]">
-                        {!! $pagein->{'content_' . app()->getLocale()} !!}
+                        <div class="description text-dimgray text-[16px] ">
+                          {!! $pagein->{'content_' . app()->getLocale()} !!}
                         </div>
 
                       </div>
                     </div>
-                    <div class="img-content sm:w-[60%] max-sm:w-full sm:h-full max-sm:h-[250px]">
+                    <div class="img-content   md:h-[350px] sm:h-[280px] max-sm:h-fit">
                       <img src="{{ asset($pagein->image) }}" alt="" class="w-full h-full object-cover">
                     </div>
                   </div>
                   @endforeach
                 </div>
+
               </div>
             </div>
           </div>
