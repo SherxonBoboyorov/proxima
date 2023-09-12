@@ -1213,14 +1213,6 @@ body,
   max-width: 1280px;
 }
 
-.max-w-\[640px\] {
-  max-width: 640px;
-}
-
-.max-w-\[600px\] {
-  max-width: 600px;
-}
-
 .flex-shrink {
   flex-shrink: 1;
 }
@@ -2444,11 +2436,6 @@ body,
   padding-right: 1.25rem;
 }
 
-.px-7 {
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
-}
-
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -3227,15 +3214,6 @@ body,
     height: 50px;
   }
 
-  .max-md\:h-fit {
-    height: -moz-fit-content;
-    height: fit-content;
-  }
-
-  .max-md\:h-\[300px\] {
-    height: 300px;
-  }
-
   .max-md\:max-h-\[50px\] {
     max-height: 50px;
   }
@@ -3270,11 +3248,6 @@ body,
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-
-  .max-md\:py-5 {
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
   }
 
   .max-md\:pl-1 {
@@ -3778,14 +3751,6 @@ body,
     height: 70px;
   }
 
-  .md\:h-\[450px\] {
-    height: 450px;
-  }
-
-  .md\:h-full {
-    height: 100%;
-  }
-
   .md\:max-h-\[80px\] {
     max-height: 80px;
   }
@@ -3817,14 +3782,6 @@ body,
   .md\:w-fit {
     width: -moz-fit-content;
     width: fit-content;
-  }
-
-  .md\:w-\[50\%\] {
-    width: 50%;
-  }
-
-  .md\:max-w-\[600px\] {
-    max-width: 600px;
   }
 
   .md\:pl-10 {

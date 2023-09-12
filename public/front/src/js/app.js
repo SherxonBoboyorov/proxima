@@ -11,23 +11,16 @@ const dropdownContent = document.querySelector("#dropdownContent");
 const dropdownBtn = document.querySelector("#dropdownBtn");
 const currentLanguages = document.querySelector(".current-language");
 const projectWrapper = document.querySelector("#project-wrapper");
-const moreProjectBtn = document.querySelector("#moreProjectBtn");
-let oldProjectWrapper = "";
-
+let projectWrapperOld = projectWrapper;
 (function () {
-  let firstChild = projectWrapper?.children?.[0];
-  let secondChild = projectWrapper?.children?.[1];
-  let thirthChild = projectWrapper?.children?.[2];
-  let fourthtChild = projectWrapper?.children?.[3];
+  console.log(projectWrapperOld.childElementCount);
+  let firstChild = projectWrapper[0];
+  let secondChild = projectWrapper[1];
+  let thirthChild = projectWrapper[2];
+  let fourthtChild = projectWrapper[3];
 
-  if (projectWrapper !== null) {
-    oldProjectWrapper = projectWrapper.innerHTML;
-    projectWrapper.innerHTML = "";
-    if (firstChild) projectWrapper.appendChild(firstChild);
-    if (secondChild) projectWrapper.appendChild(secondChild);
-    if (thirthChild) projectWrapper.appendChild(thirthChild);
-    if (fourthtChild) projectWrapper.appendChild(fourthtChild);
-  }
+  // projectWrapper.innerHTML = "<div>bo'sh</div>";
+  // projectWrapper.innerHTML = firstChild;
 })();
 
 navbarToggler?.addEventListener("click", () => {
@@ -167,17 +160,6 @@ function resizeProjectItem() {
   let result = childCountArr.filter((num) => num == childenCount);
   if (childCountArr.includes(childenCount)) {
     projectWrapper.children[result[0] - 1].style.width = "100%";
-    projectWrapper.children[result[0] - 1].querySelector(
-      ".bottom-text"
-    ).style.display = "block";
   }
 }
 resizeProjectItem();
-
-function moreProject() {
-  if (projectWrapper !== null) {
-    projectWrapper.innerHTML = oldProjectWrapper;
-    resizeProjectItem();
-    moreProjectBtn.classList.add("hidden");
-  }
-}

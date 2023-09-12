@@ -24,7 +24,7 @@
           </div>
           <div class="title text-center text-dimgray text-[24px] uppercase">{{ $promotional->{'title_' . app()->getLocale()} }}</div>
           <hr class="mx-auto w-[30px] bg-orange border-none h-[2px] my-3">
-          <div class="description text-center text-dimgray text-[16px] max-h-[100px] overflow-hidden">
+          <div class="description text-center text-dimgray text-[16px] max-h-[150px] overflow-hidden">
             {!! $promotional->{'content_' . app()->getLocale()} !!}
           </div>
         </div>

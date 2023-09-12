@@ -56,32 +56,9 @@
 #project-wrapper .project:nth-child(29),
 #project-wrapper .project:nth-child(30) {
   width: 49.6%; }
-  #project-wrapper .project:nth-child(2) .bottom-text,
-  #project-wrapper .project:nth-child(3) .bottom-text,
-  #project-wrapper .project:nth-child(5) .bottom-text,
-  #project-wrapper .project:nth-child(6) .bottom-text,
-  #project-wrapper .project:nth-child(8) .bottom-text,
-  #project-wrapper .project:nth-child(9) .bottom-text,
-  #project-wrapper .project:nth-child(11) .bottom-text,
-  #project-wrapper .project:nth-child(12) .bottom-text,
-  #project-wrapper .project:nth-child(14) .bottom-text,
-  #project-wrapper .project:nth-child(15) .bottom-text,
-  #project-wrapper .project:nth-child(17) .bottom-text,
-  #project-wrapper .project:nth-child(18) .bottom-text,
-  #project-wrapper .project:nth-child(20) .bottom-text,
-  #project-wrapper .project:nth-child(21) .bottom-text,
-  #project-wrapper .project:nth-child(23) .bottom-text,
-  #project-wrapper .project:nth-child(24) .bottom-text,
-  #project-wrapper .project:nth-child(26) .bottom-text,
-  #project-wrapper .project:nth-child(27) .bottom-text,
-  #project-wrapper .project:nth-child(29) .bottom-text,
-  #project-wrapper .project:nth-child(30) .bottom-text {
-    display: none; }
 
 @media (max-width: 768px) {
   #project-wrapper .project {
-    width: 100% !important; }
-    #project-wrapper .project .bottom-text {
-      display: block !important; } }
+    width: 100% !important; } }
 
 /*# sourceMappingURL=custom.css.map */

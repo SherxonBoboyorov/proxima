@@ -102,19 +102,11 @@
   .project:nth-child(29),
   .project:nth-child(30) {
     width: 49.6%;
-
-    .bottom-text {
-      display: none;
-    }
   }
 }
 
 @media (max-width: 768px) {
   #project-wrapper .project {
     width: 100% !important;
-
-    .bottom-text {
-      display: block !important;
-    }
   }
 }
