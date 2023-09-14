@@ -80,7 +80,7 @@
                       <div class="text-body h-fit w-full">
                         <div class="date text-orange text-[14px]">{{  date('d.m.Y', strtotime($new->created_at)) }}</div>
                         <div
-                          class="title text-dimgray font-[600] my-1 sm:text-[20px] max-sm:text-[18px] overflow-hidden">
+                          class="title text-dimgray font-[600] my-1 sm:text-[20px] max-sm:text-[18px] truncate overflow-hidden">
                           {{ $new->{'title_' . app()->getLocale()} }}
                         </div>
                         <div

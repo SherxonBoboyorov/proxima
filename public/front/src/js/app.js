@@ -11,16 +11,23 @@ const dropdownContent = document.querySelector("#dropdownContent");
 const dropdownBtn = document.querySelector("#dropdownBtn");
 const currentLanguages = document.querySelector(".current-language");
 const projectWrapper = document.querySelector("#project-wrapper");
-let projectWrapperOld = projectWrapper;
-(function () {
-  console.log(projectWrapperOld.childElementCount);
-  let firstChild = projectWrapper[0];
-  let secondChild = projectWrapper[1];
-  let thirthChild = projectWrapper[2];
-  let fourthtChild = projectWrapper[3];
+const moreProjectBtn = document.querySelector("#moreProjectBtn");
+let oldProjectWrapper = "";
 
-  // projectWrapper.innerHTML = "<div>bo'sh</div>";
-  // projectWrapper.innerHTML = firstChild;
+(function () {
+  let firstChild = projectWrapper?.children?.[0];
+  let secondChild = projectWrapper?.children?.[1];
+  let thirthChild = projectWrapper?.children?.[2];
+  let fourthtChild = projectWrapper?.children?.[3];
+
+  if (projectWrapper !== null) {
+    oldProjectWrapper = projectWrapper.innerHTML;
+    projectWrapper.innerHTML = "";
+    if (firstChild) projectWrapper.appendChild(firstChild);
+    if (secondChild) projectWrapper.appendChild(secondChild);
+    if (thirthChild) projectWrapper.appendChild(thirthChild);
+    if (fourthtChild) projectWrapper.appendChild(fourthtChild);
+  }
 })();
 
 navbarToggler?.addEventListener("click", () => {
@@ -66,7 +73,6 @@ document.body.addEventListener("click", (e) => {
   }
 });
 
-let togglePlayVideo = false;
 videoWrappper?.addEventListener("click", (e) => {
   videoWrappper.querySelector("#videoImg").click();
   const videoModal = document.querySelector(".fancybox-content");
@@ -154,12 +160,10 @@ dropdownContent.addEventListener("click", (e) => {
   }
 });
 
-function resizeProjectItem() {
-  const childenCount = projectWrapper?.childElementCount;
-  let childCountArr = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29];
-  let result = childCountArr.filter((num) => num == childenCount);
-  if (childCountArr.includes(childenCount)) {
-    projectWrapper.children[result[0] - 1].style.width = "100%";
+function moreProject() {
+  if (projectWrapper !== null) {
+    projectWrapper.innerHTML = oldProjectWrapper;
+    resizeProjectItem();
+    moreProjectBtn.classList.add("hidden");
   }
 }
-resizeProjectItem();
