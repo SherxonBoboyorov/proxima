@@ -29,7 +29,7 @@
                     <div class="title text-dimgray sm:text-[20px] max-sm:[18px] font-[600] mb-1 truncate">
                       {!! $product->{'title_' . app()->getLocale()} !!}
                     </div>
-                    <div class="price text-orange font-[600] sm:text-[20px] max-sm:text-[18px]">{{ $product->{'price_' . app()->getLocale()} }} <span class="ml-1 sm:text-[16px] max-sm:text-[14px] text-dimgray font-[500]">@lang('main.som')</span></div>
+                    {{-- <div class="price text-orange font-[600] sm:text-[20px] max-sm:text-[18px]">{{ $product->{'price_' . app()->getLocale()} }} <span class="ml-1 sm:text-[16px] max-sm:text-[14px] text-dimgray font-[500]">@lang('main.som')</span></div> --}}
                   </div>
                 </a>
               </div>
