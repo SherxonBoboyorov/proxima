@@ -17,9 +17,9 @@
 <body>
   <div class="w-full mx-auto wrapper-fluid overflow-hidden relative flex min-h-screen flex-col">
     <!-- header start -->
-    <div class="header absolute top-0 left-0 z-10 w-full  px-4">
+    <div id="navArea" class="header fixed top-0 left-0 z-10 w-full  px-4">
       <div class="header-centered max-w-screen-xl mx-auto w-full py-4 flex justify-between items-center">
-        <div id="navbar-toggler" class="navbar-toggler cursor-pointer [@media(min-width:1100px)]:hidden sm:w-[30px] sm:h-[30px]  max-sm:w-[20px] max-sm:h-[20px]">
+        <div id="navbar-toggler" class="navbar-toggler cursor-pointer xl:hidden sm:w-[30px] sm:h-[30px] max-sm:w-[20px] max-sm:h-[20px]">
           <img src="{{ asset('front/src/public/icons/menu.png') }}" alt="" class="w-full h-full">
         </div>
 
@@ -29,15 +29,16 @@
           </a>
         </div>
 
-        <div class="link-content [@media(max-width:1100px)]:hidden flex text-white text-[16px] justify-between items-center max-w-[50%] w-full mx-5">
+        <div class="link-content max-xl:hidden flex text-white text-[16px] justify-between items-center max-w-[40%] w-full">
           <a href="{{ route('about') }}">@lang('main.kompaniya_haqida')</a>
           <a href="{{ route('projects') }}">@lang('main.loyihalar') </a>
           <a href="{{ route('products') }}">@lang('main.mahsulotlar') </a>
           <a href="{{ route('question') }}">@lang('main.savollar')</a>
         </div>
 
-        <div class="search-content  flex justify-between items-center">
-          <button onclick="submitApplicationModalOpen()" class="px-3 py-2 [@media(max-width:1100px)]:hidden text-center w-max border bg-transparent text-[14px] text-[white] uppercase">
+        <div class="search-content flex justify-between items-center">
+            <a href="tel:{{ $options->where('key', 'phone')->first()->value }}" class="text-white xl:mt-1 mr-5 max-md:hidden">{{ $options->where('key', 'phone')->first()->value }}</a>
+          <button onclick="submitApplicationModalOpen()" class="px-3 py-2 max-xl:hidden text-center w-max border bg-transparent text-[14px] text-[white] uppercase">
             @lang('main.arizangizni_yuboring')
           </button>
 
@@ -105,6 +106,10 @@
                 @lang('main.arizangizni_yuboring')
               </button>
             </div>
+            <div class="link mt-4">
+                <a href="tel:{{ $options->where('key', 'phone')->first()->value }}"
+                  class="text-orange  [@media(max-width:480px)]:text-[14px] [@media(min-width:480px)]:text-[18px]  [@media(max-width:768px)]:block hidden">{{ $options->where('key', 'phone')->first()->value }}</a>
+              </div>
           </div>
         </div>
       </div>
@@ -133,7 +138,7 @@
               <!-- Title end -->
             </div>
             <!-- Text content end -->
-    
+
             <!-- Form Content start -->
             <div class="form-content mx-auto px-2 ">
               <form action="{{ route('yourSave') }}" method="POST" class="my-3">
@@ -152,7 +157,7 @@
             <!-- Form Content end -->
           </div>
         </div>
-    
+
         <!-- submit application end -->
 
 
@@ -162,13 +167,13 @@
     <div class="footer w-full mx-auto mt-auto bg-[#2B2B2B]">
         <div class="top-footer mx-auto max-w-screen-xl my-10 flex flex-wrap justify-between px-3">
           <div class="logo-footer mb-5 [@media(min-width:786px)]:w-[30%] [@media(min-width:450px)]:w-1/2 [@media(max-width:450px)]:w-full">
-  
+
             <div class="logo">
               <a href="{{ route('/') }}">
                 <img src="{{ asset('front/src/public/icons/logo.png') }}" alt="" class="max-w-[180px]">
               </a>
             </div>
-  
+
             <div class="sm-icons w-fit flex justify-between items-center mt-7">
               <a href="{{ $options->where('key', 'instagram')->first()->value }}" class="mr-4 w-[35px] h-[35px] group ">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full" viewBox="0 0 30 30" fill="none">
@@ -192,7 +197,7 @@
                 </svg>
               </a>
             </div>
-  
+
           </div>
           <div class="link-footer [@media(min-width:786px)]:w-[30%] [@media(min-width:450px)]:w-1/2 [@media(max-width:450px)]:w-full mb-5">
             <div class="mb-3">
@@ -210,6 +215,18 @@
             </div>
           </div>
           <div class="address-footer [@media(min-width:786px)]:w-2/5 [@media(max-width:768px)]:w-full">
+            <div class="mb-4">
+                <!-- <a href="https://www.google.com/maps/search/+%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD,+%D0%B3.+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82%D0%A3%D0%BB.+%D0%A2%D0%B5%D0%BC%D1%83%D1%80+%D0%9C%D0%B0%D0%BB%D0%B8%D0%BA,+%D0%B4%D0%BE%D0%BC+17%D0%B0/@41.2905012,69.3319186,18z?entry=ttu"
+                  class="text-white flex text-[14px]">
+                  <div class="mr-3 font-[600]">Адрес:</div>
+                  <div>Узбекистан, г. ТашкентУл. Темур Малик, дом 17а</div>
+                </a> -->
+                <button onclick="submitApplicationModalOpen()"
+                  class="px-3 py-2 text-center w-max border bg-transparent text-[14px] text-[white] uppercase">
+                  Оставить заявку
+                </button>
+              </div>
+
             <div class="mb-3">
               <a class="text-white flex text-[14px]">
                 <div class="mr-3 font-[600]">@lang('main.manzil'):</div>
@@ -242,18 +259,18 @@
         </div>
       </div>
     </div>
-  
-  
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script type="module" src="{{ asset('front/src/js/swiper.js') }}"></script>
     <script src="{{ asset('front/src/js/app.js') }}"></script>
   </body>
-  
+
   </html>
-  
-  <!-- 
-  
-  
+
+  <!--
+
+
    -->
