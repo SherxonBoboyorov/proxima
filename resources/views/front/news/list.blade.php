@@ -11,7 +11,6 @@
       2018 => 2018,
       2017 => 2017,
     ];
-
 @endphp
 
 @section('content')
@@ -55,14 +54,12 @@
               <a href="{{ route('news') }}">@lang('main.yangiliklar')</a>
             </div>
 
-            @foreach($years as $value)
-            <div id="filterForm" class="years flex justify-start items-center my-4 overflow-auto">
-                 @csrf
-                 @foreach($months as $k=>$item)
-                   <a href="{{ route('news', ["year" => $k]) }}" class="mr-3 text-dimgray [&.active-year]:text-orange text-[16px]" name="year">{{ $item }}</a>
-                 @endforeach
-                </div>
-            @endforeach
+               <div id="filterForm" class="years flex justify-start items-center my-4 overflow-auto" >
+                @csrf
+                    @foreach($months as $item)
+                      <a href="{{ route('news', ["year" => $item]) }}" class="mr-3 text-dimgray  [&.active-year]:text-orange text-[16px]">{{ $item }}</a>
+                    @endforeach
+               </div>
 
           <div id="result_section">
             <div class="body mt-2 h-fit">
@@ -70,7 +67,7 @@
               <div class="card-wrapper w-full mt-7">
                 @foreach($news as $new)
                 <div class="card w-full mb-7 sm:h-[280px] max-sm:h-[200px] [@media(max-width:450px)]:h-fit">
-                  <a href="http://proxima.sosgroup.uz/ru/news/solnechnye-paneli-eto-ekologicheski-chistyy-istochnik-energii" class="card-content flex flex-wrap w-full h-full  border">
+                  <a href="{{ route('new.show', $new->{'slug_' . app()->getLocale()}) }}" class="card-content flex flex-wrap w-full h-full  border">
                     <div
                       class="img-content h-full [@media(min-width:450px)]:w-[45%] [@media(max-width:450px)]:w-full [@media(max-width:450px)]:h-[200px]">
                       <img src="{{ asset($new->image) }}" alt="" class="w-full h-full object-cover">
@@ -93,7 +90,7 @@
                 </div>
                 @endforeach
               </div>
-            
+
              {{ $news->links("vendor.pagination.pagination")}}
 
             </div>

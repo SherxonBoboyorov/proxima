@@ -15,9 +15,9 @@ class NewsController extends Controller
         if($request->year){
             $news = $news->whereYear('created_at', $request->year);
         }
-        $news = $news->paginate(6);
+        $news = $news->paginate(4);
         $years = Article::select(DB::raw('Month(created_at) as month'))->distinct()->pluck('month')->toArray();
-        
+
         return view('front.news.list', compact(
             'news',
             'years'
